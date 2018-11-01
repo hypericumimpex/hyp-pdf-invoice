@@ -431,12 +431,25 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 
 							$package = YIT_Plugin_Licence()->check( $init ) ? $this->_package_url : null;
 
+							$tested_up_to   = (string) str_replace( '.x', '', $plugin_remote_info->{"up-to"} );
+							$tested_up_to   = preg_replace( '/-.*$/', '', $tested_up_to );
+							$wp_version     = preg_replace( '/-.*$/', '', get_bloginfo( 'version' ) );
+
+							if( strpos( $wp_version, $tested_up_to ) !== false ){
+								$tested_up_to = $wp_version;
+							}
 							$obj                          = new stdClass();
 							$obj->slug                    = (string) $init;
 							$obj->new_version             = (string) $plugin_remote_info->latest;
 							$obj->changelog               = (string) $plugin_remote_info->changelog;
 							$obj->package                 = $package;
 							$obj->plugin                  = $init;
+							$obj->tested                  = $tested_up_to;
+
+							if( ! empty( $plugin_remote_info->icons ) ){
+								$obj->icons = (array) $plugin_remote_info->icons;
+							}
+
 							$transient->response[ $init ] = $obj;
 						}
 
@@ -620,7 +633,7 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 				//Get license for YITH Plugins
 				$enabled_license = YIT_Plugin_Licence()->get_licence();
 
-				if( false !== $enabled_license[ $slug ]['activated'] ){
+				if( isset( $enabled_license[ $slug ]['activated'] ) && false !== $enabled_license[ $slug ]['activated'] ){
 					if( isset( $enabled_license[ $slug ]['licence_key'] ) ){
 						$license = $enabled_license[ $slug ]['licence_key'];
 					}
