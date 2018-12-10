@@ -1,15 +1,17 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce PDF Invoice\n"
-"POT-Creation-Date: 2018-09-20 13:00+0100\n"
-"PO-Revision-Date: 2018-09-20 13:56+0100\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
+"pdf-invoice.premium\n"
+"POT-Creation-Date: 2018-09-20 08:30:46+00:00\n"
+"PO-Revision-Date: 2018-11-12 11:59+0000\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
 "Language: nl_NL\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.13\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __ ;_e;_n:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -105,7 +107,6 @@ msgid "View Invoice"
 msgstr "Bekijk factuur"
 
 #: lib/class.yith-woocommerce-pdf-invoice.php:585
-#, php-format
 msgid "View Invoice No. %s"
 msgstr "Bekijk factuur Nr. %s"
 
@@ -293,7 +294,6 @@ msgstr ""
 "Deze functie is niet beschikbaar in combinatie met YITH Multi Vendor plugin."
 
 #: lib/class.yith-ywpi-multivendor-loader.php:247
-#, php-format
 msgid "(Main order #%s)"
 msgstr "(Hoofdbestelling #%s)"
 
@@ -435,20 +435,20 @@ msgstr ""
 "corresponderende tekst."
 
 #: plugin-options/documents-options.php:72
-msgid "Proforma invoice file name format"
-msgstr "Proforma factuur bestandsnaam formaat"
+msgid "Pro-forma invoice file name format"
+msgstr "Opmaak bestandsnaam pro-forma nota"
 
 #: plugin-options/documents-options.php:75
 msgid ""
-"Set the format for the proforma file name. Use [order_number], [year], "
+"Set the format for the pro-forma file name. Use [order_number], [year], "
 "[month], [day] as placeholders. <b>The [order_number]\n"
 "placeholder is necessary</b>. If not specified, it will be queued to the "
 "corresponding text."
 msgstr ""
-"Bepaal het formaat voor de proforma bestandsnaam. Gebruik [order_number], "
-"[year], [month], [day] als placeholders. <b>De[order_number]\n"
-"placeholder is noodzakelijk</b>. Indien niet aangegeven, wordt hij geplaatst "
-"bij de corresponderende tekst."
+"Instellingen opmaak bestandsnaam pro-forma nota. Gebruik [order_number], "
+"[year], [month], [day] als invulvelden. <b>Het invulveld [order_number]\n"
+"is vereist</b>. Indien niet aangegeven, wordt het geplaatst bij de "
+"corresponderende tekst."
 
 #: plugin-options/documents-options.php:84
 msgid "Packing slip file name format"
@@ -703,12 +703,12 @@ msgid "Advanced settings"
 msgstr "Geavanceerde instellingen"
 
 #: plugin-options/general-options.php:124
-msgid "Send proforma"
-msgstr "Stuur proforma"
+msgid "Send pro-forma"
+msgstr "Stuur pro-forma"
 
 #: plugin-options/general-options.php:127
-msgid "Attach proforma invoice to new order email"
-msgstr "Voeg proforma factuur toe aan nieuwe bestelling email"
+msgid "Attach pro-forma invoice to new order email"
+msgstr "Pro-forma factuur toevoegen aan email van nieuwe bestelling"
 
 #: plugin-options/general-options.php:131
 msgid "SSN number"
@@ -1075,7 +1075,7 @@ msgstr "Btw"
 
 #: plugin-options/template-options.php:286
 msgid "Tax percentage"
-msgstr "Tax percentage"
+msgstr "Belastingpercentage"
 
 #: plugin-options/template-options.php:295
 #: plugin-options/template-options.php:576
@@ -1441,37 +1441,61 @@ msgctxt "Privacy Policy Content"
 msgid "SSN and VAT of an order"
 msgstr "SSN en BTW van een bestelling"
 
+#. Plugin Name of the plugin/theme
+msgid "YITH WooCommerce PDF Invoice and Shipping List Premium"
+msgstr "YITH WooCommerce PDF Invoice and Shipping List Premium"
+
+#. Plugin URI of the plugin/theme
+msgid "http://yithemes.com/themes/plugins/yith-woocommerce-pdf-invoice/"
+msgstr "http://yithemes.com/themes/plugins/yith-woocommerce-pdf-invoice/"
+
+#. Description of the plugin/theme
+msgid ""
+"Generate PDF invoices, credit notes, pro-forma invoice and packing slip for "
+"WooCommerce orders."
+msgstr ""
+"Genereer PDF-facturen, creditnota's, pro-forma-facturen en pakbon voor "
+"WooCommerce-bestellingen."
+
+#. Author of the plugin/theme
+msgid "YITHEMES"
+msgstr "YITHEMES"
+
+#. Author URI of the plugin/theme
+msgid "http://yithemes.com/"
+msgstr "http://yithemes.com/"
+
+#~ msgid "Proforma invoice file name format"
+#~ msgstr "Proforma factuur bestandsnaam formaat"
+
+#~ msgid ""
+#~ "Set the format for the proforma file name. Use [order_number], [year], "
+#~ "[month], [day] as placeholders. <b>The [order_number]\n"
+#~ "placeholder is necessary</b>. If not specified, it will be queued to the "
+#~ "corresponding text."
+#~ msgstr ""
+#~ "Bepaal het formaat voor de proforma bestandsnaam. Gebruik [order_number], "
+#~ "[year], [month], [day] als placeholders. <b>De[order_number]\n"
+#~ "placeholder is noodzakelijk</b>. Indien niet aangegeven, wordt hij "
+#~ "geplaatst bij de corresponderende tekst."
+
+#~ msgid "Send proforma"
+#~ msgstr "Stuur proforma"
+
+#~ msgid "Attach proforma invoice to new order email"
+#~ msgstr "Voeg proforma factuur toe aan nieuwe bestelling email"
+
 #~ msgid "Pro-forma Invoice"
 #~ msgstr "Pro-forma nota"
 
 #~ msgid "Pro-Forma"
 #~ msgstr "Pro-forma"
 
-#~ msgid "Pro-forma invoice file name format"
-#~ msgstr "Opmaak bestandsnaam pro-forma nota"
-
-#~ msgid ""
-#~ "Set the format for the pro-forma file name. Use [order_number], [year], "
-#~ "[month], [day] as placeholders. <b>The [order_number]\n"
-#~ "placeholder is necessary</b>. If not specified, it will be queued to the "
-#~ "corresponding text."
-#~ msgstr ""
-#~ "Instellingen opmaak bestandsnaam pro-forma nota. Gebruik [order_number], "
-#~ "[year], [month], [day] als invulvelden. <b>Het invulveld [order_number]\n"
-#~ "is vereist</b>. Indien niet aangegeven, wordt het geplaatst bij de "
-#~ "corresponderende tekst."
-
 #~ msgid "Enable pro-forma"
 #~ msgstr "Activeer pro-forma"
 
 #~ msgid "Check this option to enable pro-forma document management."
 #~ msgstr "Selecteer deze optie om pro-forma document beheer te activeren."
-
-#~ msgid "Send pro-forma"
-#~ msgstr "Stuur pro-forma"
-
-#~ msgid "Attach pro-forma invoice to new order email"
-#~ msgstr "Pro-forma factuur toevoegen aan email van nieuwe bestelling"
 
 #~ msgid "Invoice and Pro-Forma invoice template settings"
 #~ msgstr "Factuur en pro-forma factuur sjabloon instellingen"

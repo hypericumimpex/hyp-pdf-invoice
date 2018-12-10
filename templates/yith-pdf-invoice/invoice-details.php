@@ -77,7 +77,7 @@ $invoice_details = new YITH_Invoice_Details( $document );
 			<!-- Show picture if related option is enabled -->
 			<?php if ( ywpi_is_enabled_column_picture ( $document ) ): ?>
 				<td class="column-picture">
-					<?php $image_path = apply_filters ( 'yith_ywpi_image_path', $invoice_details->get_product_image ( $item ) );
+					<?php $image_path = apply_filters ( 'yith_ywpi_image_path', $invoice_details->get_product_image ( $item ), $_product );
 					if ( $image_path ): ?>
 						<img class="product-image" src="<?php echo $image_path; ?>" />
 					<?php endif; ?>
@@ -91,7 +91,13 @@ $invoice_details = new YITH_Invoice_Details( $document );
 
 				<?php if ( ywpi_is_enabled_column_variation ( $document ) ) : ?>
 					<?php echo urldecode($invoice_details->get_variation_text ( $item_id, $_product )); ?>
+                    <br>
 				<?php endif; ?>
+
+                <?php if ( ywpi_is_enabled_column_short_description ( $document ) ) : ?>
+                    <?php echo urldecode($invoice_details->get_short_description( $item, $item_id )); ?>
+                    <br>
+                <?php endif; ?>
 
 				<?php if ( ywpi_is_enabled_column_sku ( $document ) ) : ?>
 					<?php echo $invoice_details->get_sku_text ( $item, $item_id ); ?>
@@ -129,7 +135,7 @@ $invoice_details = new YITH_Invoice_Details( $document );
                 }
 
 
-                 if ( ywpi_is_enabled_column_short_description ( $document ) && ( ! empty( $post_excerpt ) ) ) : ?>
+                if ( ywpi_is_enabled_column_short_description ( $document ) && ( $invoice_details->get_short_description( $item, $item_id) != '' ) ) : ?>
                 <div class="product-short-description"><?php echo $invoice_details->get_short_description( $item, $item_id); ?></div>
                 <?php endif; ?>
 

@@ -38,6 +38,8 @@ if ( ! function_exists( 'ywpi_get_option_with_placeholder' ) ) {
 	function ywpi_get_option_with_placeholder( $option_name, $placeholder, $obj = null ) {
 		$value = ywpi_get_option( $option_name, $obj );
 
+		$placeholder = apply_filters( 'ywpi_get_option_mandatory_placeholder', $placeholder );
+
 		if ( ! isset( $value ) ) {
 			return $placeholder;
 		}

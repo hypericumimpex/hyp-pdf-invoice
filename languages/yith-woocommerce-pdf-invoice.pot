@@ -3,10 +3,9 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce PDF Invoice and Shipping List Premium "
-"1.8.3\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
-"pdf-invoice.premium\n"
-"POT-Creation-Date: 2018-09-20 08:30:46+00:00\n"
+"1.8.6\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
+"POT-Creation-Date: 2018-12-07 10:05:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,7 +13,7 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
-#: init.php:56
+#: init.php:52
 msgid ""
 "YITH WooCommerce PDF Invoice is enabled but not effective. It requires "
 "WooCommerce in order to work."
@@ -62,8 +61,8 @@ msgid "VAT number source"
 msgstr ""
 
 #: lib/class.yith-woocommerce-pdf-invoice-premium.php:341
-#: lib/class.yith-woocommerce-pdf-invoice.php:362
-#: lib/class.yith-woocommerce-pdf-invoice.php:1026
+#: lib/class.yith-woocommerce-pdf-invoice.php:397
+#: lib/class.yith-woocommerce-pdf-invoice.php:1061
 #: lib/class.yith-ywpi-multivendor-loader.php:557
 msgid "Invoice"
 msgstr ""
@@ -77,28 +76,28 @@ msgctxt "Privacy Policy Content"
 msgid "YITH Pdf Invoice for WooCommerce premium"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:139
+#: lib/class.yith-woocommerce-pdf-invoice.php:174
 msgid "The logo your uploading is "
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:140
+#: lib/class.yith-woocommerce-pdf-invoice.php:175
 msgid ". Logo must be no bigger than 300 x 150 pixels"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:206
+#: lib/class.yith-woocommerce-pdf-invoice.php:241
 msgid "YITH PDF Invoice: unknown document type. Unable to manage this action."
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:364
+#: lib/class.yith-woocommerce-pdf-invoice.php:399
 msgid "Packing slip"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:584
+#: lib/class.yith-woocommerce-pdf-invoice.php:619
 #: lib/class.yith-ywpi-multivendor-loader.php:596
 msgid "View Invoice"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:585
+#: lib/class.yith-woocommerce-pdf-invoice.php:620
 msgid "View Invoice No. %s"
 msgstr ""
 
@@ -134,149 +133,149 @@ msgstr ""
 msgid "Regenerate invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:280
+#: lib/class.yith-ywpi-backend.php:278
 msgid "Show packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:285 lib/class.yith-ywpi-backend.php:565
+#: lib/class.yith-ywpi-backend.php:283 lib/class.yith-ywpi-backend.php:566
 msgid "Create packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:301 lib/class.yith-ywpi-backend.php:559
+#: lib/class.yith-ywpi-backend.php:299 lib/class.yith-ywpi-backend.php:560
 msgid "Regenerate packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:356 lib/class.yith-ywpi-backend.php:358
+#: lib/class.yith-ywpi-backend.php:357 lib/class.yith-ywpi-backend.php:359
 msgid "Preview invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:383
+#: lib/class.yith-ywpi-backend.php:384
 #: lib/class.yith-ywpi-multivendor-loader.php:552
 msgid "Invoice status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:387
+#: lib/class.yith-ywpi-backend.php:388
 msgid "Invoice number: "
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:392
+#: lib/class.yith-ywpi-backend.php:393
 msgid "Created: "
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:397
+#: lib/class.yith-ywpi-backend.php:398
 msgid "There is no invoice for this order"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:407 lib/class.yith-ywpi-backend.php:409
-#: lib/class.yith-ywpi-backend.php:549 lib/class.yith-ywpi-backend.php:616
+#: lib/class.yith-ywpi-backend.php:408 lib/class.yith-ywpi-backend.php:410
+#: lib/class.yith-ywpi-backend.php:550 lib/class.yith-ywpi-backend.php:617
 msgid "View"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:412 lib/class.yith-ywpi-backend.php:414
+#: lib/class.yith-ywpi-backend.php:413 lib/class.yith-ywpi-backend.php:415
 msgid "Remove"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:417 lib/class.yith-ywpi-backend.php:419
+#: lib/class.yith-ywpi-backend.php:418 lib/class.yith-ywpi-backend.php:420
 msgid "Regenerate"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:424 lib/class.yith-ywpi-backend.php:426
-#: lib/class.yith-ywpi-backend.php:488 lib/class.yith-ywpi-backend.php:567
-#: lib/class.yith-ywpi-backend.php:627
+#: lib/class.yith-ywpi-backend.php:425 lib/class.yith-ywpi-backend.php:427
+#: lib/class.yith-ywpi-backend.php:489 lib/class.yith-ywpi-backend.php:568
+#: lib/class.yith-ywpi-backend.php:628
 msgid "Create"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:456
+#: lib/class.yith-ywpi-backend.php:457
 msgid "Credit note status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:465
+#: lib/class.yith-ywpi-backend.php:466
 msgid "Refund #"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:470
+#: lib/class.yith-ywpi-backend.php:471
 msgid "View credit note"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:472
+#: lib/class.yith-ywpi-backend.php:473
 msgctxt "Button text to display the credit note"
 msgid "View"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:476
+#: lib/class.yith-ywpi-backend.php:477
 msgid "Remove credit note"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:478
+#: lib/class.yith-ywpi-backend.php:479
 msgctxt "Button text to delete a credit note"
 msgid "Remove"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:482
+#: lib/class.yith-ywpi-backend.php:483
 msgid "Regenerate credit note"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:484
+#: lib/class.yith-ywpi-backend.php:485
 msgctxt "Button text to regenerate a credit note"
 msgid "Regenerate"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:490
+#: lib/class.yith-ywpi-backend.php:491
 msgctxt "Button text to create the credit note"
 msgid "Create"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:530
+#: lib/class.yith-ywpi-backend.php:531
 msgid "Packing slip status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:534
+#: lib/class.yith-ywpi-backend.php:535
 msgid "Packing slip created."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:538
+#: lib/class.yith-ywpi-backend.php:539
 msgid "There is no packing slip available for this order."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:547
+#: lib/class.yith-ywpi-backend.php:548
 msgid "View packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:553
+#: lib/class.yith-ywpi-backend.php:554
 msgid "Remove packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:555
+#: lib/class.yith-ywpi-backend.php:556
 msgctxt "Button text to remove a document"
 msgid "Remove"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:561 lib/class.yith-ywpi-backend.php:621
+#: lib/class.yith-ywpi-backend.php:562 lib/class.yith-ywpi-backend.php:622
 msgctxt "Button text to regenerate a document"
 msgid "Regenerate"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:597
+#: lib/class.yith-ywpi-backend.php:598
 msgid "Proforma status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:601
+#: lib/class.yith-ywpi-backend.php:602
 msgid "Proforma created."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:605
+#: lib/class.yith-ywpi-backend.php:606
 msgid "There is no proforma for this order."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:614
+#: lib/class.yith-ywpi-backend.php:615
 msgid "View proforma"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:619
+#: lib/class.yith-ywpi-backend.php:620
 msgid "Regenerate proforma"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:625
+#: lib/class.yith-ywpi-backend.php:626
 msgid "Create proforma"
 msgstr ""
 
@@ -309,46 +308,37 @@ msgstr ""
 msgid "PDF Invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:126
+#: lib/class.yith-ywpi-plugin-fw-loader.php:128
 msgid "General"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:129
+#: lib/class.yith-ywpi-plugin-fw-loader.php:131
 msgid "Documents"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:130
+#: lib/class.yith-ywpi-plugin-fw-loader.php:132
 msgid "Template"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:134
-#: lib/class.yith-ywpi-plugin-fw-loader.php:199
+#: lib/class.yith-ywpi-plugin-fw-loader.php:136
 msgid "Premium Version"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:195
-msgid "Settings"
-msgstr ""
-
-#: lib/class.yith-ywpi-plugin-fw-loader.php:224
-msgid "Plugin Documentation"
-msgstr ""
-
-#: lib/class.yith-ywpi-plugin-fw-loader.php:237
+#: lib/class.yith-ywpi-plugin-fw-loader.php:190
 msgid ""
 "YITH WooCommerce PDF Invoice and Packing slip is available in an outstanding "
 "PREMIUM version with many new options, discover it now."
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:238
+#: lib/class.yith-ywpi-plugin-fw-loader.php:191
 msgid "Premium version"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:245
+#: lib/class.yith-ywpi-plugin-fw-loader.php:198
 msgid "YITH WooCommerce PDF Invoice and Packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:246
+#: lib/class.yith-ywpi-plugin-fw-loader.php:199
 msgid ""
 "In YIT Plugins tab you can find YITH WooCommerce PDF Invoice and Packing "
 "slip options.<br> From this menu you can access all settings of YITH plugins "
@@ -373,7 +363,7 @@ msgstr ""
 msgid ""
 "Set the format for the invoice number. Use [number], [prefix], [suffix], "
 "[year], [month] and [day] as placeholders. <b>The [number] placeholder is "
-"required</b>, if not\n"
+"required</b>, if not\r\n"
 "specified, it will be queued to the corresponding text."
 msgstr ""
 
@@ -388,8 +378,8 @@ msgstr ""
 #: plugin-options/documents-options.php:50
 msgid ""
 "Set the format for the invoice file name. Use [number], [prefix], [suffix], "
-"[year], [month], [day] as placeholders.\n"
-"<b>The\n"
+"[year], [month], [day] as placeholders.\r\n"
+"<b>The\r\n"
 "[number] placeholder is necessary</b>. If not specified, it will be queued "
 "to the corresponding text."
 msgstr ""
@@ -401,19 +391,19 @@ msgstr ""
 #: plugin-options/documents-options.php:63
 msgid ""
 "Set the format for the credit note file name. Use [number], [prefix], "
-"[suffix], [year], [month], [day] as placeholders. <b>The [number]\n"
+"[suffix], [year], [month], [day] as placeholders. <b>The [number]\r\n"
 "placeholder is necessary</b>. If not specified, it will be queued to the "
 "corresponding text."
 msgstr ""
 
 #: plugin-options/documents-options.php:72
-msgid "Pro-forma invoice file name format"
+msgid "Proforma invoice file name format"
 msgstr ""
 
 #: plugin-options/documents-options.php:75
 msgid ""
-"Set the format for the pro-forma file name. Use [order_number], [year], "
-"[month], [day] as placeholders. <b>The [order_number]\n"
+"Set the format for the proforma file name. Use [order_number], [year], "
+"[month], [day] as placeholders. <b>The [order_number]\r\n"
 "placeholder is necessary</b>. If not specified, it will be queued to the "
 "corresponding text."
 msgstr ""
@@ -425,7 +415,7 @@ msgstr ""
 #: plugin-options/documents-options.php:87
 msgid ""
 "Set the format for the packing slip file name. Use [order_number], [year], "
-"[month], [day] as placeholders. <b>The [order_number]\n"
+"[month], [day] as placeholders. <b>The [order_number]\r\n"
 "placeholder is necessary</b>. If not specified, it will be queued to the "
 "corresponding text."
 msgstr ""
@@ -443,7 +433,7 @@ msgstr ""
 #: plugin-options/documents-options.php:107
 msgid ""
 "Choose the invoice number for the next invoice (use this option if you want "
-"to\n"
+"to\r\n"
 "\t\t\t move away from automatic numeration)."
 msgstr ""
 
@@ -496,7 +486,8 @@ msgstr ""
 
 #: plugin-options/documents-options.php:156
 msgid ""
-"Choose the number for the next credit note (use this option if you want to\n"
+"Choose the number for the next credit note (use this option if you want to"
+"\r\n"
 "\t\t\t move away from automatic numeration)"
 msgstr ""
 
@@ -531,7 +522,7 @@ msgstr ""
 #: plugin-options/general-options.php:28
 msgid ""
 "Flag this item if you want to preview the invoice. Useful to preview changes "
-"while customizing the invoice template.\n"
+"while customizing the invoice template.\r\n"
 "\t\t\tWhen this option is enabled, no counter will be incremented."
 msgstr ""
 
@@ -570,7 +561,7 @@ msgstr ""
 #: plugin-options/general-options.php:64
 msgid ""
 "Set the folder where you want to store documents. Use [year], [month], [day] "
-"as placeholders. Example:\n"
+"as placeholders. Example:\r\n"
 "\t\t\t\"Invoices/[year]/[month]\" for invoices stored by year and month; "
 "leave it blank to store documents in root folder."
 msgstr ""
@@ -644,11 +635,11 @@ msgid "Advanced settings"
 msgstr ""
 
 #: plugin-options/general-options.php:124
-msgid "Send pro-forma"
+msgid "Send proforma"
 msgstr ""
 
 #: plugin-options/general-options.php:127
-msgid "Attach pro-forma invoice to new order email"
+msgid "Attach proforma invoice to new order email"
 msgstr ""
 
 #: plugin-options/general-options.php:131
@@ -742,8 +733,8 @@ msgstr ""
 #: plugin-options/template-options.php:46
 #: plugin-options/vendor-options.php:106
 msgid ""
-"Your company details\n"
-"Address\n"
+"Your company details\r\n"
+"Address\r\n"
 "City, State"
 msgstr ""
 
@@ -774,25 +765,25 @@ msgstr ""
 
 #: plugin-options/template-options.php:80
 msgid ""
-"Set the customer details to use in the invoice. <br>\n"
+"Set the customer details to use in the invoice. <br>\r\n"
 "\t\t\tUse the postmeta metakeys as placeholders within double curly "
 "brackets, for example {{_billing_first_name}} for showing the order billing "
-"first name. <br>\n"
+"first name. <br>\r\n"
 "\t\t\tYou can read the documentation <a href=\"https://docs.yithemes.com/"
 "yith-woocommerce-pdf-invoice/premium-version-settings/insert-new-user-"
-"details-documents/\">here</a> for more information.\n"
+"details-documents/\">here</a> for more information.\r\n"
 "\t\t\t"
 msgstr ""
 
 #: plugin-options/template-options.php:84
 msgid ""
-"{{_billing_first_name}} {{_billing_last_name}}\n"
-"{{_billing_address_1}}\n"
-"{{_billing_postcode}}{{_billing_city}}\n"
-"{{_billing_country}}\n"
-"SSN: {{_billing_vat_ssn}}\n"
-"VAT: {{_billing_vat_number}}\n"
-"{{_billing_phone}}\n"
+"{{_billing_first_name}} {{_billing_last_name}}\r\n"
+"{{_billing_address_1}}\r\n"
+"{{_billing_postcode}}{{_billing_city}}\r\n"
+"{{_billing_country}}\r\n"
+"SSN: {{_billing_vat_ssn}}\r\n"
+"VAT: {{_billing_vat_number}}\r\n"
+"{{_billing_phone}}\r\n"
 "{{_billing_email}}"
 msgstr ""
 
@@ -802,13 +793,13 @@ msgstr ""
 
 #: plugin-options/template-options.php:99
 msgid ""
-"Set the customer details to use in the invoice. <br>  \n"
+"Set the customer details to use in the invoice. <br>  \r\n"
 "\t\t\t Use the postmeta metakeys as placeholders within double curly "
 "brackets, for example {{_shipping_first_name}} for showing the order "
-"shipping first name. <br>\n"
+"shipping first name. <br>\r\n"
 "\t\t\t You can read the documentation <a href=\"https://docs.yithemes.com/"
 "yith-woocommerce-pdf-invoice/premium-version-settings/insert-new-user-"
-"details-documents/\">here</a> for more information.\n"
+"details-documents/\">here</a> for more information.\r\n"
 "\t\t\t "
 msgstr ""
 
@@ -833,11 +824,11 @@ msgstr ""
 
 #: plugin-options/template-options.php:132
 msgid ""
-"Type the text to show as footer on invoices. <br>\n"
+"Type the text to show as footer on invoices. <br>\r\n"
 "\t\t\tYou also can use the postmeta metakeys as placeholders. For more "
 "information read the <a href=\"https://docs.yithemes.com/yith-woocommerce-"
 "pdf-invoice/premium-version-settings/insert-new-user-details-documents/"
-"\">documentation.</a>\n"
+"\">documentation.</a>\r\n"
 "\t\t\t"
 msgstr ""
 
@@ -858,11 +849,11 @@ msgstr ""
 
 #: plugin-options/template-options.php:152
 msgid ""
-"Type the text to show as footer on Proforma invoices. <br>\n"
+"Type the text to show as footer on Proforma invoices. <br>\r\n"
 "\t\t\tYou also can use the postmeta metakeys as placeholders. For more "
 "information read the <a href=\"https://docs.yithemes.com/yith-woocommerce-"
 "pdf-invoice/premium-version-settings/insert-new-user-details-documents/"
-"\">documentation.</a>\n"
+"\">documentation.</a>\r\n"
 "\t\t\t"
 msgstr ""
 
@@ -1008,11 +999,11 @@ msgstr ""
 
 #: plugin-options/template-options.php:330
 msgid ""
-"Type the text to show as footer on credit notes. <br>\n"
+"Type the text to show as footer on credit notes. <br>\r\n"
 "\t\t\tYou also can use the postmeta metakeys as placeholders. For more "
 "information read the <a href=\"https://docs.yithemes.com/yith-woocommerce-"
 "pdf-invoice/premium-version-settings/insert-new-user-details-documents/"
-"\">documentation.</a>\n"
+"\">documentation.</a>\r\n"
 "\t\t\t"
 msgstr ""
 
@@ -1072,11 +1063,11 @@ msgstr ""
 
 #: plugin-options/template-options.php:432
 msgid ""
-"Type the text to show as footer on packing slip. <br>\n"
+"Type the text to show as footer on packing slip. <br>\r\n"
 "\t\t\tYou also can use the postmeta metakeys as placeholders. For more "
 "information read the <a href=\"https://docs.yithemes.com/yith-woocommerce-"
 "pdf-invoice/premium-version-settings/insert-new-user-details-documents/"
-"\">documentation.</a>\n"
+"\">documentation.</a>\r\n"
 "\t\t\t"
 msgstr ""
 
@@ -1141,8 +1132,8 @@ msgstr ""
 #: plugin-options/vendor-options.php:65
 msgid ""
 "Set the format for the invoice number. Use [number], [prefix] and [suffix] "
-"as placeholders. <b>The [number] placeholder is required</b>. If not\n"
-"specified,\n"
+"as placeholders. <b>The [number] placeholder is required</b>. If not\r\n"
+"specified,\r\n"
 "it will be queued to the corresponding text.</b>"
 msgstr ""
 
@@ -1201,7 +1192,7 @@ msgid "Total tax"
 msgstr ""
 
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:41
-#: templates/yith-pdf-invoice/invoice-details.php:291
+#: templates/yith-pdf-invoice/invoice-details.php:297
 msgid "Shipping"
 msgstr ""
 
@@ -1260,15 +1251,15 @@ msgstr ""
 msgid "Discount percentage"
 msgstr ""
 
-#: templates/yith-pdf-invoice/invoice-details.php:115
+#: templates/yith-pdf-invoice/invoice-details.php:121
 msgid "Weight: "
 msgstr ""
 
-#: templates/yith-pdf-invoice/invoice-details.php:121
+#: templates/yith-pdf-invoice/invoice-details.php:127
 msgid "Dimensions: "
 msgstr ""
 
-#: templates/yith-pdf-invoice/invoice-details.php:215
+#: templates/yith-pdf-invoice/invoice-details.php:221
 msgid "Fee"
 msgstr ""
 
@@ -1313,19 +1304,23 @@ msgid "YITH WooCommerce PDF Invoice and Shipping List Premium"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://yithemes.com/themes/plugins/yith-woocommerce-pdf-invoice/"
+msgid "https://yithemes.com/themes/plugins/yith-woocommerce-pdf-invoice/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Generate PDF invoices, credit notes, pro-forma invoice and packing slip for "
-"WooCommerce orders."
+"<code><strong>YITH WooCommerce PDF Invoice and Shipping List</strong></code> "
+"generate PDF invoices, credit notes, pro-forma invoice and packing slip for "
+"WooCommerce orders. Set manual or automatic invoice generation, fully "
+"customizable document template and sync with your DropBox account. <a href="
+"\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-"
+"commerce shop on <strong>YITH</strong></a>."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "YITHEMES"
+msgid "YITH"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://yithemes.com/"
+msgid "https://yithemes.com/"
 msgstr ""
