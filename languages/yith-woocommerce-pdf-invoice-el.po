@@ -1,17 +1,16 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce PDF Invoice\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/yith-woocommerce-"
-"pdf-invoice.premium\n"
-"POT-Creation-Date: 2018-09-20 08:30:46+00:00\n"
-"PO-Revision-Date: 2018-10-09 14:48+0100\n"
+"Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
+"POT-Creation-Date: 2018-12-27 10:58+0000\n"
+"PO-Revision-Date: 2018-12-27 10:58+0000\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
 "Language: el_GR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 1.8.12\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __ ;_e;_n:1,2;__ngettext:1,2;__ngettext_noop:1,2;"
@@ -20,7 +19,7 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: plugin-fw\n"
 
-#: init.php:56
+#: init.php:52
 msgid ""
 "YITH WooCommerce PDF Invoice is enabled but not effective. It requires "
 "WooCommerce in order to work."
@@ -69,8 +68,8 @@ msgid "VAT number source"
 msgstr "Προέλευση αριθμού ΦΠΑ"
 
 #: lib/class.yith-woocommerce-pdf-invoice-premium.php:341
-#: lib/class.yith-woocommerce-pdf-invoice.php:362
-#: lib/class.yith-woocommerce-pdf-invoice.php:1026
+#: lib/class.yith-woocommerce-pdf-invoice.php:397
+#: lib/class.yith-woocommerce-pdf-invoice.php:1061
 #: lib/class.yith-ywpi-multivendor-loader.php:557
 msgid "Invoice"
 msgstr "Τιμολόγιο"
@@ -86,28 +85,28 @@ msgctxt "Privacy Policy Content"
 msgid "YITH Pdf Invoice for WooCommerce premium"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:139
+#: lib/class.yith-woocommerce-pdf-invoice.php:174
 msgid "The logo your uploading is "
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:140
+#: lib/class.yith-woocommerce-pdf-invoice.php:175
 msgid ". Logo must be no bigger than 300 x 150 pixels"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:206
+#: lib/class.yith-woocommerce-pdf-invoice.php:241
 msgid "YITH PDF Invoice: unknown document type. Unable to manage this action."
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:364
+#: lib/class.yith-woocommerce-pdf-invoice.php:399
 msgid "Packing slip"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:584
+#: lib/class.yith-woocommerce-pdf-invoice.php:619
 #: lib/class.yith-ywpi-multivendor-loader.php:596
 msgid "View Invoice"
 msgstr "Προβολή Τιμολογίου"
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:585
+#: lib/class.yith-woocommerce-pdf-invoice.php:620
 msgid "View Invoice No. %s"
 msgstr "Προβολή Τιμολογίου Νο.%s"
 
@@ -147,149 +146,149 @@ msgstr "Δημιουργία Τιμολογίου"
 msgid "Regenerate invoice"
 msgstr "Δημιουργία Τιμολογίου"
 
-#: lib/class.yith-ywpi-backend.php:280
+#: lib/class.yith-ywpi-backend.php:278
 msgid "Show packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:285 lib/class.yith-ywpi-backend.php:565
+#: lib/class.yith-ywpi-backend.php:283 lib/class.yith-ywpi-backend.php:566
 msgid "Create packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:301 lib/class.yith-ywpi-backend.php:559
+#: lib/class.yith-ywpi-backend.php:299 lib/class.yith-ywpi-backend.php:560
 msgid "Regenerate packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:356 lib/class.yith-ywpi-backend.php:358
+#: lib/class.yith-ywpi-backend.php:357 lib/class.yith-ywpi-backend.php:359
 msgid "Preview invoice"
 msgstr "Προβολή Τιμολογίου"
 
-#: lib/class.yith-ywpi-backend.php:383
+#: lib/class.yith-ywpi-backend.php:384
 #: lib/class.yith-ywpi-multivendor-loader.php:552
 msgid "Invoice status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:387
+#: lib/class.yith-ywpi-backend.php:388
 msgid "Invoice number: "
 msgstr "Αριθμός Τιμολογίου: "
 
-#: lib/class.yith-ywpi-backend.php:392
+#: lib/class.yith-ywpi-backend.php:393
 msgid "Created: "
 msgstr "Δημιουργήθηκε: "
 
-#: lib/class.yith-ywpi-backend.php:397
+#: lib/class.yith-ywpi-backend.php:398
 msgid "There is no invoice for this order"
 msgstr "Δεν υπάρχει τιμολόγιο για αυτήν την παραγγελία"
 
-#: lib/class.yith-ywpi-backend.php:407 lib/class.yith-ywpi-backend.php:409
-#: lib/class.yith-ywpi-backend.php:549 lib/class.yith-ywpi-backend.php:616
+#: lib/class.yith-ywpi-backend.php:408 lib/class.yith-ywpi-backend.php:410
+#: lib/class.yith-ywpi-backend.php:550 lib/class.yith-ywpi-backend.php:617
 msgid "View"
 msgstr "Προβολή"
 
-#: lib/class.yith-ywpi-backend.php:412 lib/class.yith-ywpi-backend.php:414
+#: lib/class.yith-ywpi-backend.php:413 lib/class.yith-ywpi-backend.php:415
 msgid "Remove"
 msgstr "Κατάργηση"
 
-#: lib/class.yith-ywpi-backend.php:417 lib/class.yith-ywpi-backend.php:419
+#: lib/class.yith-ywpi-backend.php:418 lib/class.yith-ywpi-backend.php:420
 msgid "Regenerate"
 msgstr "Αναδημιουργία"
 
-#: lib/class.yith-ywpi-backend.php:424 lib/class.yith-ywpi-backend.php:426
-#: lib/class.yith-ywpi-backend.php:488 lib/class.yith-ywpi-backend.php:567
-#: lib/class.yith-ywpi-backend.php:627
+#: lib/class.yith-ywpi-backend.php:425 lib/class.yith-ywpi-backend.php:427
+#: lib/class.yith-ywpi-backend.php:489 lib/class.yith-ywpi-backend.php:568
+#: lib/class.yith-ywpi-backend.php:628
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: lib/class.yith-ywpi-backend.php:456
+#: lib/class.yith-ywpi-backend.php:457
 msgid "Credit note status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:465
+#: lib/class.yith-ywpi-backend.php:466
 msgid "Refund #"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:470
+#: lib/class.yith-ywpi-backend.php:471
 msgid "View credit note"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:472
+#: lib/class.yith-ywpi-backend.php:473
 msgctxt "Button text to display the credit note"
 msgid "View"
 msgstr "Προβολή"
 
-#: lib/class.yith-ywpi-backend.php:476
+#: lib/class.yith-ywpi-backend.php:477
 msgid "Remove credit note"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:478
+#: lib/class.yith-ywpi-backend.php:479
 msgctxt "Button text to delete a credit note"
 msgid "Remove"
 msgstr "Κατάργηση"
 
-#: lib/class.yith-ywpi-backend.php:482
+#: lib/class.yith-ywpi-backend.php:483
 msgid "Regenerate credit note"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:484
+#: lib/class.yith-ywpi-backend.php:485
 msgctxt "Button text to regenerate a credit note"
 msgid "Regenerate"
 msgstr "Αναδημιουργία"
 
-#: lib/class.yith-ywpi-backend.php:490
+#: lib/class.yith-ywpi-backend.php:491
 msgctxt "Button text to create the credit note"
 msgid "Create"
 msgstr "Δημιουργία"
 
-#: lib/class.yith-ywpi-backend.php:530
+#: lib/class.yith-ywpi-backend.php:531
 msgid "Packing slip status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:534
+#: lib/class.yith-ywpi-backend.php:535
 msgid "Packing slip created."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:538
+#: lib/class.yith-ywpi-backend.php:539
 msgid "There is no packing slip available for this order."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:547
+#: lib/class.yith-ywpi-backend.php:548
 msgid "View packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:553
+#: lib/class.yith-ywpi-backend.php:554
 msgid "Remove packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:555
+#: lib/class.yith-ywpi-backend.php:556
 msgctxt "Button text to remove a document"
 msgid "Remove"
 msgstr "Κατάργηση"
 
-#: lib/class.yith-ywpi-backend.php:561 lib/class.yith-ywpi-backend.php:621
+#: lib/class.yith-ywpi-backend.php:562 lib/class.yith-ywpi-backend.php:622
 msgctxt "Button text to regenerate a document"
 msgid "Regenerate"
 msgstr "Αναδημιουργία"
 
-#: lib/class.yith-ywpi-backend.php:597
+#: lib/class.yith-ywpi-backend.php:598
 msgid "Proforma status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:601
+#: lib/class.yith-ywpi-backend.php:602
 msgid "Proforma created."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:605
+#: lib/class.yith-ywpi-backend.php:606
 msgid "There is no proforma for this order."
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:614
+#: lib/class.yith-ywpi-backend.php:615
 msgid "View proforma"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:619
+#: lib/class.yith-ywpi-backend.php:620
 msgid "Regenerate proforma"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:625
+#: lib/class.yith-ywpi-backend.php:626
 msgid "Create proforma"
 msgstr ""
 
@@ -322,46 +321,37 @@ msgstr ""
 msgid "PDF Invoice"
 msgstr "Τιμολόγιο σε PDF"
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:126
+#: lib/class.yith-ywpi-plugin-fw-loader.php:128
 msgid "General"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:129
+#: lib/class.yith-ywpi-plugin-fw-loader.php:131
 msgid "Documents"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:130
+#: lib/class.yith-ywpi-plugin-fw-loader.php:132
 msgid "Template"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:134
-#: lib/class.yith-ywpi-plugin-fw-loader.php:199
+#: lib/class.yith-ywpi-plugin-fw-loader.php:136
 msgid "Premium Version"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:195
-msgid "Settings"
-msgstr ""
-
-#: lib/class.yith-ywpi-plugin-fw-loader.php:224
-msgid "Plugin Documentation"
-msgstr ""
-
-#: lib/class.yith-ywpi-plugin-fw-loader.php:237
+#: lib/class.yith-ywpi-plugin-fw-loader.php:190
 msgid ""
 "YITH WooCommerce PDF Invoice and Packing slip is available in an outstanding "
 "PREMIUM version with many new options, discover it now."
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:238
+#: lib/class.yith-ywpi-plugin-fw-loader.php:191
 msgid "Premium version"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:245
+#: lib/class.yith-ywpi-plugin-fw-loader.php:198
 msgid "YITH WooCommerce PDF Invoice and Packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:246
+#: lib/class.yith-ywpi-plugin-fw-loader.php:199
 msgid ""
 "In YIT Plugins tab you can find YITH WooCommerce PDF Invoice and Packing "
 "slip options.<br> From this menu you can access all settings of YITH plugins "
@@ -423,14 +413,12 @@ msgid ""
 msgstr ""
 
 #: plugin-options/documents-options.php:72
-#, fuzzy
-#| msgid "Invoice notes"
-msgid "Pro-forma invoice file name format"
-msgstr "Σημειώσεις Τιμολογίου"
+msgid "Proforma invoice file name format"
+msgstr ""
 
 #: plugin-options/documents-options.php:75
 msgid ""
-"Set the format for the pro-forma file name. Use [order_number], [year], "
+"Set the format for the proforma file name. Use [order_number], [year], "
 "[month], [day] as placeholders. <b>The [order_number]\n"
 "placeholder is necessary</b>. If not specified, it will be queued to the "
 "corresponding text."
@@ -676,11 +664,11 @@ msgid "Advanced settings"
 msgstr ""
 
 #: plugin-options/general-options.php:124
-msgid "Send pro-forma"
+msgid "Send proforma"
 msgstr ""
 
 #: plugin-options/general-options.php:127
-msgid "Attach pro-forma invoice to new order email"
+msgid "Attach proforma invoice to new order email"
 msgstr ""
 
 #: plugin-options/general-options.php:131
@@ -1263,7 +1251,7 @@ msgid "Total tax"
 msgstr "Σύνολο ΦΠΑ 24%: "
 
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:41
-#: templates/yith-pdf-invoice/invoice-details.php:291
+#: templates/yith-pdf-invoice/invoice-details.php:292
 msgid "Shipping"
 msgstr "Μεταφορικά"
 
@@ -1273,11 +1261,19 @@ msgstr "Μεταφορικά"
 msgid "Total"
 msgstr "Σύνολο"
 
+#: templates/yith-pdf-invoice/credit-note-details-with-products.php:185
+msgid "Order totals"
+msgstr ""
+
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:191
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:232
 #: templates/yith-pdf-invoice/credit-note-details.php:49
 msgid "Your refund"
 msgstr "Η επιστροφή σας"
+
+#: templates/yith-pdf-invoice/credit-note-details-with-products.php:226
+msgid "Refunded"
+msgstr ""
 
 #: templates/yith-pdf-invoice/credit-note-details.php:35
 msgid "Total Shipping"
@@ -1322,15 +1318,15 @@ msgstr "Ημερομηνία Παραγγελίας"
 msgid "Discount percentage"
 msgstr "Ποσοστό Έκπτωσης"
 
-#: templates/yith-pdf-invoice/invoice-details.php:115
+#: templates/yith-pdf-invoice/invoice-details.php:116
 msgid "Weight: "
 msgstr "Βάρος: "
 
-#: templates/yith-pdf-invoice/invoice-details.php:121
+#: templates/yith-pdf-invoice/invoice-details.php:122
 msgid "Dimensions: "
 msgstr "Διαστάσεις: "
 
-#: templates/yith-pdf-invoice/invoice-details.php:215
+#: templates/yith-pdf-invoice/invoice-details.php:216
 msgid "Fee"
 msgstr "Φόρος"
 
@@ -1375,19 +1371,28 @@ msgid "YITH WooCommerce PDF Invoice and Shipping List Premium"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
-msgid "http://yithemes.com/themes/plugins/yith-woocommerce-pdf-invoice/"
+msgid "https://yithemes.com/themes/plugins/yith-woocommerce-pdf-invoice/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"Generate PDF invoices, credit notes, pro-forma invoice and packing slip for "
-"WooCommerce orders."
+"<code><strong>YITH WooCommerce PDF Invoice and Shipping List</strong></code> "
+"generate PDF invoices, credit notes, pro-forma invoice and packing slip for "
+"WooCommerce orders. Set manual or automatic invoice generation, fully "
+"customizable document template and sync with your DropBox account. <a href="
+"\"https://yithemes.com/\" target=\"_blank\">Get more plugins for your e-"
+"commerce shop on <strong>YITH</strong></a>."
 msgstr ""
 
 #. Author of the plugin/theme
-msgid "YITHEMES"
+msgid "YITH"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://yithemes.com/"
+msgid "https://yithemes.com/"
 msgstr ""
+
+#, fuzzy
+#~| msgid "Invoice notes"
+#~ msgid "Pro-forma invoice file name format"
+#~ msgstr "Σημειώσεις Τιμολογίου"

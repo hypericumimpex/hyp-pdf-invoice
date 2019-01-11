@@ -182,7 +182,7 @@ $wc_ge_3 = version_compare( WC()->version, '3.0', '>=' );
     if ( $order->get_total() == ($parent_order->get_total() * -1) ) {
         ?>
         <tr style="background-color: #CBCBCB">
-            <td class="column-product"><b><?php echo 'Order totals:  '; ?></b></td>
+            <td class="column-product"><b><?php echo __( 'Order totals', 'yith-woocommerce-pdf-invoice' ); ?>: </b></td>
 
             <td class="column-quantity"><?php echo ''; ?></td>
 
@@ -223,13 +223,13 @@ $wc_ge_3 = version_compare( WC()->version, '3.0', '>=' );
     <?php }
     else{ ?>
         <tr style="background-color: #CBCBCB">
-            <td class="column-product"><b><?php echo 'Refunded:  '; ?></b></td>
+            <td class="column-product"><b><?php echo __( 'Refunded', 'yith-woocommerce-pdf-invoice' ); ?>: </b></td>
 
             <td class="column-quantity"><?php echo ''; ?></td>
 
             <td class="column-refund-text"><?php
                 $refund_text = get_option('ywpi_credit_note_refund_text', '');
-                echo $refund_text ? $refund_text : __('Your refund', 'yith-woocommerce-pdf-invoice');
+                echo $refund_text ? $refund_text : __( 'Your refund', 'yith-woocommerce-pdf-invoice' );
 
                 if (ywpi_is_enabled_credit_note_reason_column($document)) : ?>
                     <br>

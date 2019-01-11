@@ -1,15 +1,15 @@
-# Copyright (C) 2018 YITH WooCommerce PDF Invoice and Shipping List Premium
+# Copyright (C) 2019 YITH WooCommerce PDF Invoice and Shipping List Premium
 # This file is distributed under the same license as the YITH WooCommerce PDF Invoice and Shipping List Premium package.
 msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce PDF Invoice and Shipping List Premium "
-"1.8.6\n"
+"1.9.1\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
-"POT-Creation-Date: 2018-12-07 10:05:46+00:00\n"
+"POT-Creation-Date: 2019-01-09 13:00:40+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
@@ -29,6 +29,67 @@ msgstr ""
 #: lib/class.yith-checkout-addon.php:380 lib/class.yith-checkout-addon.php:433
 #: lib/class.yith-woocommerce-pdf-invoice-privacy.php:115
 msgid "VAT"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:133
+msgid "Receiver type"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:140
+msgid "Private"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:141
+msgid "Public administration"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:198
+msgid "XML status"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:205
+#: lib/class.yith-ywpi-backend.php:388
+msgid "Invoice number: "
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:212
+msgid "View XML"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:214
+#: lib/class.yith-ywpi-backend.php:408 lib/class.yith-ywpi-backend.php:410
+#: lib/class.yith-ywpi-backend.php:550 lib/class.yith-ywpi-backend.php:617
+msgid "View"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:217
+msgid "Regenerate XML"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:219
+#: lib/class.yith-ywpi-backend.php:562 lib/class.yith-ywpi-backend.php:622
+msgctxt "Button text to regenerate a document"
+msgid "Regenerate"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:223
+msgid "The XML file has been created for this order"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:226
+msgid "Create XML"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:228
+#: lib/class.yith-ywpi-backend.php:425 lib/class.yith-ywpi-backend.php:427
+#: lib/class.yith-ywpi-backend.php:489 lib/class.yith-ywpi-backend.php:568
+#: lib/class.yith-ywpi-backend.php:628
+msgid "Create"
+msgstr ""
+
+#: lib/class.yith-electronic-invoice.php:272
+#: lib/class.yith-electronic-invoice.php:277
+msgid "Company name is set, so %s is a required field."
 msgstr ""
 
 #: lib/class.yith-invoice-details.php:99
@@ -62,7 +123,7 @@ msgstr ""
 
 #: lib/class.yith-woocommerce-pdf-invoice-premium.php:341
 #: lib/class.yith-woocommerce-pdf-invoice.php:397
-#: lib/class.yith-woocommerce-pdf-invoice.php:1061
+#: lib/class.yith-woocommerce-pdf-invoice.php:1081
 #: lib/class.yith-ywpi-multivendor-loader.php:557
 msgid "Invoice"
 msgstr ""
@@ -92,56 +153,65 @@ msgstr ""
 msgid "Packing slip"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:619
+#: lib/class.yith-woocommerce-pdf-invoice.php:621
 #: lib/class.yith-ywpi-multivendor-loader.php:596
 msgid "View Invoice"
 msgstr ""
 
-#: lib/class.yith-woocommerce-pdf-invoice.php:620
+#: lib/class.yith-woocommerce-pdf-invoice.php:622
 msgid "View Invoice No. %s"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:131
+#: lib/class.yith-ywpi-backend.php:123
+msgid ""
+"Authorize this plugin to access to your Dropbox space.<br />\r\n"
+"\t\t\t\t\t\t\t\tAll <b>new documents</b> will be sent to your Dropbox space "
+"as soon as they are created.<br />\r\n"
+"\t \t\t\t\t\t\t\tCopy and paste the authorization code here, as in %sthis "
+"short guide%s."
+msgstr ""
+
+#: lib/class.yith-ywpi-backend.php:130
 msgid "Access Token"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:139
+#: lib/class.yith-ywpi-backend.php:138
 msgid "Get new Access Token"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:147 plugin-options/general-options.php:177
+#: lib/class.yith-ywpi-backend.php:146 plugin-options/general-options.php:185
 msgid "Dropbox folder"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:151
+#: lib/class.yith-ywpi-backend.php:150
 msgid "Choose the name of the Dropbox folder where to save the files"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:177
+#: lib/class.yith-ywpi-backend.php:176
 msgid "YITH PDF Invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:224
+#: lib/class.yith-ywpi-backend.php:223
 msgid "Show invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:228
+#: lib/class.yith-ywpi-backend.php:227
 msgid "Create invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:244
+#: lib/class.yith-ywpi-backend.php:243
 msgid "Regenerate invoice"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:278
+#: lib/class.yith-ywpi-backend.php:277
 msgid "Show packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:283 lib/class.yith-ywpi-backend.php:566
+#: lib/class.yith-ywpi-backend.php:282 lib/class.yith-ywpi-backend.php:566
 msgid "Create packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:299 lib/class.yith-ywpi-backend.php:560
+#: lib/class.yith-ywpi-backend.php:298 lib/class.yith-ywpi-backend.php:560
 msgid "Regenerate packing slip"
 msgstr ""
 
@@ -154,10 +224,6 @@ msgstr ""
 msgid "Invoice status"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:388
-msgid "Invoice number: "
-msgstr ""
-
 #: lib/class.yith-ywpi-backend.php:393
 msgid "Created: "
 msgstr ""
@@ -166,23 +232,12 @@ msgstr ""
 msgid "There is no invoice for this order"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:408 lib/class.yith-ywpi-backend.php:410
-#: lib/class.yith-ywpi-backend.php:550 lib/class.yith-ywpi-backend.php:617
-msgid "View"
-msgstr ""
-
 #: lib/class.yith-ywpi-backend.php:413 lib/class.yith-ywpi-backend.php:415
 msgid "Remove"
 msgstr ""
 
 #: lib/class.yith-ywpi-backend.php:418 lib/class.yith-ywpi-backend.php:420
 msgid "Regenerate"
-msgstr ""
-
-#: lib/class.yith-ywpi-backend.php:425 lib/class.yith-ywpi-backend.php:427
-#: lib/class.yith-ywpi-backend.php:489 lib/class.yith-ywpi-backend.php:568
-#: lib/class.yith-ywpi-backend.php:628
-msgid "Create"
 msgstr ""
 
 #: lib/class.yith-ywpi-backend.php:457
@@ -250,11 +305,6 @@ msgctxt "Button text to remove a document"
 msgid "Remove"
 msgstr ""
 
-#: lib/class.yith-ywpi-backend.php:562 lib/class.yith-ywpi-backend.php:622
-msgctxt "Button text to regenerate a document"
-msgid "Regenerate"
-msgstr ""
-
 #: lib/class.yith-ywpi-backend.php:598
 msgid "Proforma status"
 msgstr ""
@@ -320,25 +370,29 @@ msgstr ""
 msgid "Template"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:136
+#: lib/class.yith-ywpi-plugin-fw-loader.php:135
+msgid "Electronic invoice"
+msgstr ""
+
+#: lib/class.yith-ywpi-plugin-fw-loader.php:140
 msgid "Premium Version"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:190
+#: lib/class.yith-ywpi-plugin-fw-loader.php:194
 msgid ""
 "YITH WooCommerce PDF Invoice and Packing slip is available in an outstanding "
 "PREMIUM version with many new options, discover it now."
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:191
+#: lib/class.yith-ywpi-plugin-fw-loader.php:195
 msgid "Premium version"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:198
+#: lib/class.yith-ywpi-plugin-fw-loader.php:202
 msgid "YITH WooCommerce PDF Invoice and Packing slip"
 msgstr ""
 
-#: lib/class.yith-ywpi-plugin-fw-loader.php:199
+#: lib/class.yith-ywpi-plugin-fw-loader.php:203
 msgid ""
 "In YIT Plugins tab you can find YITH WooCommerce PDF Invoice and Packing "
 "slip options.<br> From this menu you can access all settings of YITH plugins "
@@ -511,6 +565,149 @@ msgid ""
 "if no suffix has to be used"
 msgstr ""
 
+#: plugin-options/electronic-invoice-options.php:21
+msgid "Transmitter/Company details settings"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:25
+msgid "Country ID"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:28
+msgid "Set the country ID to show in the XML document"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:32
+msgid "Transmitter ID"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:35
+msgid "Set your transmitter ID to show in the XML document"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:39
+msgid "Transmission format"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:42
+msgid "Set the transmission format for the XML document"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:46
+msgid "Fiscal regime"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:49
+msgid "Fiscal regime you show in the XML document"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:53
+msgid "Registered name"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:56
+msgid "Set the registered name of your company"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:60
+msgid "Address"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:63
+msgid "Set the address of your company"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:67
+msgid "CAP"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:70
+msgid "Set the CAP (postal code) of your company"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:74
+msgid "Company city"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:77
+msgid "Set the city of your company"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:81
+msgid "Company province"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:84
+msgid "Set the province of your company"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:95
+msgid "Include tracking info"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:98
+msgid ""
+"Enable this field to include tracking fields inside the XML document. To "
+"fill these fields you'll have to custom code an integration of these data."
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:108
+msgid "Checkout settings"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:112
+msgid "Show receiver ID"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:115
+msgid ""
+"Check this option to enable the receiver ID (on Checkout and My Account page)"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:119
+msgid "Receiver ID label"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:122
+msgid "Set label for Receiver ID field"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:123
+msgid "Receiver ID"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:126
+msgid "Show receiver PEC (certified email address)"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:129
+msgid ""
+"Check this option to enable the receiver PEC field (on Checkout and My "
+"Account page)"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:133
+msgid "Receiver PEC label"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:136
+msgid "Set label for Receiver PEC field"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:137
+msgid "Receiver PEC"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:140
+msgid "Show receiver's type"
+msgstr ""
+
+#: plugin-options/electronic-invoice-options.php:143
+msgid ""
+"Check this option to allow your customer to specify if he/she is a private "
+"entity or public administration"
+msgstr ""
+
 #: plugin-options/general-options.php:21
 msgid "Generating documents"
 msgstr ""
@@ -550,15 +747,26 @@ msgstr ""
 msgid "Check this option to enable credit note management."
 msgstr ""
 
+#: plugin-options/general-options.php:54
+msgid "Enable eletronic invoice (Italian Customers)"
+msgstr ""
+
 #: plugin-options/general-options.php:57
+msgid ""
+"Check this option to enable electronic invoice system. You' be able to "
+"download a XML to forward to \"Agenzia delle Entrate\".%3$s \r\n"
+"                       %1$s Only for Italian Customers"
+msgstr ""
+
+#: plugin-options/general-options.php:65
 msgid "General settings"
 msgstr ""
 
-#: plugin-options/general-options.php:61
+#: plugin-options/general-options.php:69
 msgid "Invoice folder format"
 msgstr ""
 
-#: plugin-options/general-options.php:64
+#: plugin-options/general-options.php:72
 msgid ""
 "Set the folder where you want to store documents. Use [year], [month], [day] "
 "as placeholders. Example:\r\n"
@@ -566,134 +774,134 @@ msgid ""
 "leave it blank to store documents in root folder."
 msgstr ""
 
-#: plugin-options/general-options.php:69
+#: plugin-options/general-options.php:77
 msgid "Document date format"
 msgstr ""
 
-#: plugin-options/general-options.php:71
+#: plugin-options/general-options.php:79
 msgid "Set date format as it should appear on documents (default is d/m/Y)."
 msgstr ""
 
-#: plugin-options/general-options.php:76
+#: plugin-options/general-options.php:84
 msgid "d/m/Y"
 msgstr ""
 
-#: plugin-options/general-options.php:77
+#: plugin-options/general-options.php:85
 msgid "d-m-Y"
 msgstr ""
 
-#: plugin-options/general-options.php:78
+#: plugin-options/general-options.php:86
 msgid "m/d/Y"
 msgstr ""
 
-#: plugin-options/general-options.php:79
+#: plugin-options/general-options.php:87
 msgid "m-d-Y"
 msgstr ""
 
-#: plugin-options/general-options.php:83
+#: plugin-options/general-options.php:91
 msgid "Generate invoices"
 msgstr ""
 
-#: plugin-options/general-options.php:87
+#: plugin-options/general-options.php:95
 msgid "Automatically"
 msgstr ""
 
-#: plugin-options/general-options.php:88
+#: plugin-options/general-options.php:96
 msgid "Manually"
 msgstr ""
 
-#: plugin-options/general-options.php:94
+#: plugin-options/general-options.php:102
 msgid "Generate invoice automatically"
 msgstr ""
 
-#: plugin-options/general-options.php:98
+#: plugin-options/general-options.php:106
 msgid "For new order"
 msgstr ""
 
-#: plugin-options/general-options.php:99
+#: plugin-options/general-options.php:107
 msgid "For processing order"
 msgstr ""
 
-#: plugin-options/general-options.php:100
+#: plugin-options/general-options.php:108
 msgid "For completed order"
 msgstr ""
 
-#: plugin-options/general-options.php:106
+#: plugin-options/general-options.php:114
 msgid "How to show the generated document?"
 msgstr ""
 
-#: plugin-options/general-options.php:110
+#: plugin-options/general-options.php:118
 msgid "Download PDF"
 msgstr ""
 
-#: plugin-options/general-options.php:111
+#: plugin-options/general-options.php:119
 msgid "Open PDF file in the browser"
 msgstr ""
 
-#: plugin-options/general-options.php:120
+#: plugin-options/general-options.php:128
 msgid "Advanced settings"
 msgstr ""
 
-#: plugin-options/general-options.php:124
+#: plugin-options/general-options.php:132
 msgid "Send proforma"
 msgstr ""
 
-#: plugin-options/general-options.php:127
+#: plugin-options/general-options.php:135
 msgid "Attach proforma invoice to new order email"
 msgstr ""
 
-#: plugin-options/general-options.php:131
+#: plugin-options/general-options.php:139
 msgid "SSN number"
 msgstr ""
 
-#: plugin-options/general-options.php:134
+#: plugin-options/general-options.php:142
 msgid "Add a SSN number field on checkout page"
 msgstr ""
 
-#: plugin-options/general-options.php:138
+#: plugin-options/general-options.php:146
 msgid "Mandatory SSN number"
 msgstr ""
 
-#: plugin-options/general-options.php:141
+#: plugin-options/general-options.php:149
 msgid "The SSN number is mandatory to complete the checkout process"
 msgstr ""
 
-#: plugin-options/general-options.php:145
+#: plugin-options/general-options.php:153
 msgid "VAT number"
 msgstr ""
 
-#: plugin-options/general-options.php:148
+#: plugin-options/general-options.php:156
 msgid "Add a VAT number field on checkout page"
 msgstr ""
 
-#: plugin-options/general-options.php:152
+#: plugin-options/general-options.php:160
 msgid "Mandatory VAT number"
 msgstr ""
 
-#: plugin-options/general-options.php:155
+#: plugin-options/general-options.php:163
 msgid "The VAT number is mandatory to complete the checkout process"
 msgstr ""
 
-#: plugin-options/general-options.php:159
+#: plugin-options/general-options.php:167
 msgid "Show delivery date"
 msgstr ""
 
-#: plugin-options/general-options.php:162
+#: plugin-options/general-options.php:170
 msgid ""
 "Show the delivery details when using the <a target=\"_blank\" href=\"https://"
 "yithemes.com/themes/plugins/yith-woocommerce-delivery-date/\">YITH "
 "WooCommerce Delivery Date</a> plugin."
 msgstr ""
 
-#: plugin-options/general-options.php:170
+#: plugin-options/general-options.php:178
 msgid "Authorize Dropbox"
 msgstr ""
 
-#: plugin-options/general-options.php:171
+#: plugin-options/general-options.php:179
 msgid "Set automatic document backup to Dropbox."
 msgstr ""
 
-#: plugin-options/general-options.php:178
+#: plugin-options/general-options.php:186
 msgid "Choose the name of the Dropbox folder where to save the files."
 msgstr ""
 
@@ -1192,7 +1400,7 @@ msgid "Total tax"
 msgstr ""
 
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:41
-#: templates/yith-pdf-invoice/invoice-details.php:297
+#: templates/yith-pdf-invoice/invoice-details.php:292
 msgid "Shipping"
 msgstr ""
 
@@ -1202,10 +1410,18 @@ msgstr ""
 msgid "Total"
 msgstr ""
 
+#: templates/yith-pdf-invoice/credit-note-details-with-products.php:185
+msgid "Order totals"
+msgstr ""
+
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:191
 #: templates/yith-pdf-invoice/credit-note-details-with-products.php:232
 #: templates/yith-pdf-invoice/credit-note-details.php:49
 msgid "Your refund"
+msgstr ""
+
+#: templates/yith-pdf-invoice/credit-note-details-with-products.php:226
+msgid "Refunded"
 msgstr ""
 
 #: templates/yith-pdf-invoice/credit-note-details.php:35
@@ -1251,15 +1467,15 @@ msgstr ""
 msgid "Discount percentage"
 msgstr ""
 
-#: templates/yith-pdf-invoice/invoice-details.php:121
+#: templates/yith-pdf-invoice/invoice-details.php:116
 msgid "Weight: "
 msgstr ""
 
-#: templates/yith-pdf-invoice/invoice-details.php:127
+#: templates/yith-pdf-invoice/invoice-details.php:122
 msgid "Dimensions: "
 msgstr ""
 
-#: templates/yith-pdf-invoice/invoice-details.php:221
+#: templates/yith-pdf-invoice/invoice-details.php:216
 msgid "Fee"
 msgstr ""
 

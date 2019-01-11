@@ -130,7 +130,11 @@ if ( ! class_exists ( 'YITH_YWPI_Plugin_FW_Loader' ) ) {
 
             $admin_tabs[ 'documents' ] = __ ( 'Documents', 'yith-woocommerce-pdf-invoice' );
             $admin_tabs[ 'template' ]  = __ ( 'Template', 'yith-woocommerce-pdf-invoice' );
-//            $admin_tabs[ 'columns' ]  = __ ( 'Fields Names', 'yith-woocommerce-pdf-invoice' );
+
+            if( YITH_Electronic_Invoice()->enable == 'yes' ){
+                $admin_tabs[ 'electronic-invoice' ]  = __ ( 'Electronic invoice', 'yith-woocommerce-pdf-invoice' );
+            }
+
 
             if ( ! defined ( 'YITH_YWPI_PREMIUM' ) ) {
                 $admin_tabs[ 'premium-landing' ] = __ ( 'Premium Version', 'yith-woocommerce-pdf-invoice' );

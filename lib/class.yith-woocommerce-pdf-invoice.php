@@ -236,7 +236,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 				return;
 			}
 
-			$allowed_type = array( 'invoice', 'packing-slip', 'proforma', 'credit-note' );
+			$allowed_type = array( 'invoice', 'packing-slip', 'proforma', 'credit-note','xml' );
 			if ( ! in_array( strtolower( $type ), $allowed_type ) ) {
 				throw new Exception( __( 'YITH PDF Invoice: unknown document type. Unable to manage this action.', 'yith-woocommerce-pdf-invoice' ) );
 			}
@@ -456,6 +456,8 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			}
 			
 			$this->create_document( $order_id, 'invoice' );
+
+			do_action('ywpi_create_automatic_invoice', $order_id);
 		}
 		
 		/**
@@ -668,6 +670,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			}
 			
 			$document = ywpi_get_order_document_by_type( $order_id, $document_type );
+
 			
 			if ( null == $document ) {
 				return null;
@@ -688,22 +691,31 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			 * For YITH_Invoice and YITH_Credit_Note, assign a new unique number and set other details
 			 */
 			if ( ( $document instanceof YITH_Invoice ) ||
-			     ( $document instanceof YITH_Credit_Note )
+			     ( $document instanceof YITH_Credit_Note ) ||
+                 ( $document instanceof YITH_XML )
 			) {
+
 				
 				//  Set the document value
 				$document->date = apply_filters( 'yith_ywpi_set_document_date', current_time( 'mysql', 0 ), $document );
-				
-				$document_type    = $document instanceof YITH_Invoice ? 'invoice' : 'credit-note';
+
+				if( $document instanceof YITH_Credit_Note ){
+				    $document_type = 'credit-note';
+                }elseif( $document instanceof YITH_XML ){
+                    $document_type = 'xml';
+                }else{
+                    $document_type = 'invoice';
+                }
+
 				$document->number = $this->get_next_number( $document, $document_type );
-				
-				$prefix           = $document instanceof YITH_Invoice ? 'ywpi_invoice_prefix' : 'ywpi_credit_note_prefix';
+
+				$prefix           = $document instanceof YITH_Credit_Note ? 'ywpi_credit_note_prefix' : 'ywpi_invoice_prefix';
 				$document->prefix = $this->replace_placeholders( ywpi_get_option( $prefix, $document->order ), $document->date );
 				
-				$suffix           = $document instanceof YITH_Invoice ? 'ywpi_invoice_suffix' : 'ywpi_credit_note_suffix';
+				$suffix           = $document instanceof YITH_Credit_Note ? 'ywpi_credit_note_suffix' : 'ywpi_invoice_suffix';
 				$document->suffix = $this->replace_placeholders( ywpi_get_option( $suffix, $document->order ), $document->date );
 				
-				$formatted_key    = $document instanceof YITH_Invoice ? 'ywpi_invoice_number_format' : 'ywpi_credit_note_number_format';
+				$formatted_key    = $document instanceof YITH_Credit_Note ? 'ywpi_credit_note_number_format' : 'ywpi_invoice_number_format';
 				$formatted_number = ywpi_get_option_with_placeholder( $formatted_key, '[number]' );
 
 				$order_number = $document->order instanceof WC_Order ? $document->order->get_order_number() : '';
@@ -732,16 +744,17 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 					$formatted_number );
 				
 				$document->formatted_number = apply_filters( 'yith_ywpi_formatted_invoice_number', $replace_placeholders, $formatted_number, $document );
+
 			}
-			
-			
-			if ( $this->create_pdf_file( $document ) ) {
-				/*  Some document type will cause the next available number to be incremented */
-				$this->increment_next_document_number( $document );
-				
-				$document->save();
-				do_action( 'yith_ywpi_document_created', $document );
-			}
+
+
+			if ( $this->create_file( $document ) ) {
+
+                $document->save();
+                do_action( 'yith_ywpi_document_created', $document );
+            }
+
+
 			
 			return $document;
 		}
@@ -780,14 +793,15 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
              * For YITH_Invoice and YITH_Credit_Note, assign a new unique number and set other details
              */
             if ( ( $document instanceof YITH_Invoice ) ||
-                ( $document instanceof YITH_Credit_Note )
+                ( $document instanceof YITH_Credit_Note ) ||
+                ( $document instanceof YITH_XML )
             ) {
 
                 //  Set the document value
                 apply_filters( 'yith_ywpi_set_document_date', $document->date, $document );
 
 
-                $formatted_key    = $document instanceof YITH_Invoice ? 'ywpi_invoice_number_format' : 'ywpi_credit_note_number_format';
+                $formatted_key    = $document instanceof YITH_Credit_Note ?  'ywpi_credit_note_number_format' : 'ywpi_invoice_number_format';
                 $formatted_number = ywpi_get_option_with_placeholder( $formatted_key, '[number]' );
 
                 $date = getdate( strtotime( $document->date ) );
@@ -819,7 +833,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
             }
 
 
-            if ( $this->create_pdf_file( $document ) ) {
+            if ( $this->create_file( $document ) ) {
 
                 $document->save();
                 do_action( 'yith_ywpi_document_created', $document );
@@ -845,7 +859,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 				return null;
 			}
 			
-			$this->create_pdf_file( $document );
+			$this->create_file( $document );
 			$this->show_file( $document->get_full_path() );
 		}
 		
@@ -862,7 +876,8 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 		private function get_next_number( $document, $type = 'invoice' ) {
 			/** $document should be an instance of  YITH_Invoice or YITH_Credit_Note */
 			if ( ! ( $document instanceof YITH_Invoice ) &&
-			     ! ( $document instanceof YITH_Credit_Note )
+			     ! ( $document instanceof YITH_Credit_Note ) &&
+                ! ( $document instanceof YITH_XML)
 			) {
 				return;
 			}
@@ -887,14 +902,16 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 				}
 			}
 			
-			$number_option          = 'invoice' == $type ? 'ywpi_invoice_number' : 'ywpi_credit_note_next_number';
+			$number_option          = 'invoice' == $type || 'xml' == $type ? 'ywpi_invoice_number' : 'ywpi_credit_note_next_number';
+
 			$current_invoice_number = ywpi_get_option( $number_option, $document );
+
 
 			if ( ! isset( $current_invoice_number ) || ! is_numeric( $current_invoice_number ) ) {
 				$current_invoice_number = 1;
 			}
 
-            return apply_filters( 'yith_ywpi_current_invoice_number', $current_invoice_number, $document->order  );
+            return apply_filters( 'yith_ywpi_current_invoice_number', $current_invoice_number, $document->order, $document  );
 		}
 		
 		
@@ -909,13 +926,14 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 		private function increment_next_document_number( $document ) {
 			/** $document should be an instance of  YITH_Invoice or YITH_Credit_Note */
 			if ( ! ( $document instanceof YITH_Invoice ) &&
-			     ! ( $document instanceof YITH_Credit_Note )
+			     ! ( $document instanceof YITH_Credit_Note ) &&
+                 ! ( $document instanceof YITH_XML )
 			) {
 				return;
 			}
 			
-			$number_option = ( $document instanceof YITH_Invoice ) ? 'ywpi_invoice_number' : 'ywpi_credit_note_next_number';
-			
+			$number_option = ( $document instanceof YITH_Credit_Note ) ? 'ywpi_credit_note_next_number' : 'ywpi_invoice_number';
+
 			ywpi_update_option( $number_option, intval( $document->number ) + 1, $document );
 		}
 		
@@ -965,7 +983,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			if ( ( null == $document ) || ! $this->check_invoice_url_for_action( $document ) ) {
 				return;
 			}
-			
+
 			$this->show_file( $document->get_full_path() );
 		}
 		
@@ -980,9 +998,11 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			if ( $resource instanceof YITH_Document ) {
 				$path = $resource->get_full_path();
 			}
-			
+
+			$content_type = apply_filters( 'ywpi_file_content_type','Content-type: application/pdf',$resource );
+
 			if ( 'open' == ywpi_get_option( 'ywpi_pdf_invoice_behaviour' ) ) {
-				header( 'Content-type: application/pdf' );
+				header( $content_type );
 				header( 'Content-Disposition: inline; filename = "' . basename( $path ) . '"' );
 				header( 'Content-Transfer-Encoding: binary' );
 				header( 'Content-Length: ' . filesize( $path ) );
@@ -990,7 +1010,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 				@readfile( $path );
 				exit();
 			} else {
-				header( "Content-type: application/pdf" );
+				header( $content_type );
 				header( 'Content-Disposition: attachment; filename = "' . basename( $path ) . '"' );
 				@readfile( $path );
 				exit();
@@ -1242,23 +1262,36 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 		
 		
 		/**
-		 * Retrieve a PDF file for a specific document
+		 * Retrieve a PDF or XML file for a specific document
 		 *
-		 * @param YITH_Document $document the document for which a PDF file should be created
+		 * @param YITH_Document $document the document for which a PDF/XML file should be created
 		 *
 		 * @return int
-		 * @author Lorenzo Giuffrida
-		 * @since  1.0.0
+		 * @author Alessio Torrisi
+		 * @since  1.9.0
 		 */
-		public function create_pdf_file( $document ) {
-			$pdf_content = $this->generate_template( $document );
-			
+		public function create_file( $document ) {
+
+            /*  Some document type will cause the next available number to be incremented */
+            $invoice_number = get_post_meta( $document->order->get_id(),'ywpi_invoice_number',true);
+
+            if( !$invoice_number ){
+
+                update_post_meta( $document->order->get_id(),'ywpi_invoice_number',$document->number );
+
+                $this->increment_next_document_number( $document );
+            }
+
+			$content = $this->generate_template( $document );
+
+			$file_format = $document instanceof YITH_XML ? 'xml' : 'pdf';
+
 			$document->save_folder = $this->create_storing_folder( $document );
-			$document->save_path   = sprintf( "%s.pdf", $this->get_document_filename( $document ) );
-			
-			return file_put_contents( $document->get_full_path(), $pdf_content );
+			$document->save_path   = sprintf( "%s.%s", $this->get_document_filename( $document ), $file_format );
+
+			return file_put_contents( $document->get_full_path(), $content );
 		}
-		
+
 		/**
 		 * Return the filename associated to the document, based on plugin settings.
 		 *
@@ -1270,16 +1303,17 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			
 			$pattern = '';
 			if ( ( $document instanceof YITH_Invoice ) ||
-			     ( $document instanceof YITH_Credit_Note )
+			     ( $document instanceof YITH_Credit_Note ) ||
+                 ( $document instanceof YITH_XML )
 			) {
 
-				$option_name = ( $document instanceof YITH_Invoice ) ? 'ywpi_invoice_filename_format' : 'ywpi_credit_note_filename_format';
+				$option_name = ( ! $document instanceof YITH_Credit_Note ) ? 'ywpi_invoice_filename_format' : 'ywpi_credit_note_filename_format';
 
 				// Filter to change filename format of invoice or credit note document. Use placeholder [number] to get automatically order of invoice or credit note
 				$pattern     = apply_filters('ywpi_pattern_filename_invoice_or_credit_note', ywpi_get_option_with_placeholder( $option_name, '[number]' ), $document);
 
                 $order_number = $document->order instanceof WC_Order ? $document->order->get_order_number() : '';
-				
+
 				$pattern = str_replace(
 					array(
 						'[number]',
@@ -1413,6 +1447,21 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 
 			return $pdf;
 		}
+
+
+
+		private function generate_template_xml( $document, $type = 'electronic-invoice-ita' ){
+
+            ob_start();
+            wc_get_template( 'yith-pdf-invoice/xml/'. $type .'/main.php',
+                array( 'document' => $document, 'type' => $type),
+                '',
+                YITH_YWPI_TEMPLATE_DIR  );
+
+            $content = ob_get_clean();
+
+		    return $content;
+        }
 		
 		
 		/**
@@ -1426,11 +1475,11 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 		 */
 		private function generate_template( $document ) {
 			
-			do_action('yith_ywpdi_before_generate_template_mpdf');
+			do_action('yith_ywpdi_before_generate_template');
+
+			$file_content = $document instanceof YITH_XML ? $this->generate_template_xml( $document ) : $this->generate_template_mpdf( $document );
 			
-			$pdf_content = $this->generate_template_mpdf( $document );
-			
-			return $pdf_content;
+			return $file_content;
 		}
 
         /**
@@ -1464,6 +1513,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 
             return $new_row_meta_args;
         }
+
 
 	}
 }

@@ -526,6 +526,10 @@ if ( ! function_exists( 'ywpi_get_order_document_by_type' ) ) {
 				$document = new YITH_Shipping( $order_id );
 				break;
 
+            case 'xml':
+                $document = new YITH_XML( $order_id );
+                break;
+
 			default:
 				$document = apply_filters( 'yith_ywpi_get_order_documents_by_type', $document, $document_type, $order_id );
 		}
@@ -544,9 +548,9 @@ if ( ! function_exists( 'ywpi_get_invoice' ) ) {
 	 * @author Lorenzo Giuffrida
 	 * @since  1.0.0
 	 */
-	function ywpi_get_invoice( $order ) {
+	function ywpi_get_invoice( $order, $type = 'invoice' ) {
 
-		return ywpi_get_order_document_by_type( $order, 'invoice' );
+		return ywpi_get_order_document_by_type( $order, $type );
 	}
 }
 

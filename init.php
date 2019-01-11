@@ -3,7 +3,7 @@
  * Plugin Name: HYP Pdf Invoice
  * Plugin URI: https://github.com/hypericumimpex/hyp-pdf-invoice/
  * Description: <code><strong>HYP Pdf Invoice</strong></code> generați automat facturi PDF, note de credit, facturi pro-forma pentru comenzile magazinului.
- * Version: 1.8.6
+ * Version: 1.9.1
  * Author: Romeo C.
  * Author URI: https://github.com/hypericumimpex/
  * Text Domain: yith-woocommerce-pdf-invoice
@@ -75,7 +75,7 @@ defined( 'YITH_YWPI_INIT' ) || define( 'YITH_YWPI_INIT', plugin_basename( __FILE
 defined( 'YITH_YWPI_PREMIUM' ) || define( 'YITH_YWPI_PREMIUM', '1' );
 defined( 'YITH_YWPI_SLUG' ) || define( 'YITH_YWPI_SLUG', 'yith-woocommerce-pdf-invoice' );
 defined( 'YITH_YWPI_SECRET_KEY' ) || define( 'YITH_YWPI_SECRET_KEY', 'gpToFMpxJ2ZT7gRSeyG8' );
-defined( 'YITH_YWPI_VERSION' ) || define( 'YITH_YWPI_VERSION', '1.8.6' );
+defined( 'YITH_YWPI_VERSION' ) || define( 'YITH_YWPI_VERSION', '1.9.1' );
 defined( 'YITH_YWPI_FILE' ) || define( 'YITH_YWPI_FILE', __FILE__ );
 defined( 'YITH_YWPI_DIR' ) || define( 'YITH_YWPI_DIR', plugin_dir_path( __FILE__ ) );
 defined( 'YITH_YWPI_URL' ) || define( 'YITH_YWPI_URL', plugins_url( '/', __FILE__ ) );
@@ -121,18 +121,21 @@ if ( ! function_exists( 'yith_ywpi_premium_init' ) ) {
 		require_once( YITH_YWPI_LIB_DIR . 'class.yith-ywpi-backend.php' );
 		require_once( YITH_YWPI_LIB_DIR . 'class.yith-woocommerce-pdf-invoice-premium.php' );
 		require_once( YITH_YWPI_LIB_DIR . 'class.yith-pdf-invoice-dropbox.php' );
+        require_once( YITH_YWPI_LIB_DIR . 'class.yith-electronic-invoice.php' );
 
 		require_once( YITH_YWPI_LIB_DIR . 'documents/class.yith-document.php' );
 		require_once( YITH_YWPI_LIB_DIR . 'documents/class.yith-invoice.php' );
 		require_once( YITH_YWPI_LIB_DIR . 'documents/class.yith-pro-forma.php' );
 		require_once( YITH_YWPI_LIB_DIR . 'documents/class.yith-credit-note.php' );
 		require_once( YITH_YWPI_LIB_DIR . 'documents/class.yith-shipping.php' );
+        require_once( YITH_YWPI_LIB_DIR . 'documents/class.yith-xml.php' );
 
 		require_once( YITH_YWPI_LIB_DIR . 'class.yith-invoice-details.php' );
 		require_once( YITH_YWPI_DIR . 'functions.php' );
 
 		YITH_YWPI_Plugin_FW_Loader::get_instance();
 		YITH_PDF_Invoice();
+        YITH_Electronic_Invoice();
 
         add_action( 'init', 'ywpi_start_plugin_compatibility', 20 );
 	}

@@ -4,12 +4,25 @@ Contributors: yithemes
 Tags: woocommerce, orders, woocommerce order, pdf, invoice, pdf invoice, delivery note, pdf invoices, automatic invoice, download, download invoice, bill order, billing, automatic billing, order invoice, billing invoice, new order, processing order, shipping list, shipping document, delivery, packing slip, transport document,  delivery, shipping, order, shop, shop invoice, customer, sell, invoices, email invoice, packing slips
 Requires at least: 4.0
 Tested up to: 5.0.x
-Stable tag: 1.8.6
+Stable tag: 1.9.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Documentation: https://docs.yithemes.com/yith-woocommerce-pdf-invoice
 
 == Changelog ==
+
+= Version 1.9.1 - Released: Jan 09, 2019 =
+
+* Update: plugin fw to version 3.1.14
+* Update: italian translation
+* Fix: Receiver ID and Receiver PEC are mandatory only is Company name is set (for Electronic Invoice Module)
+* Dev: new filter 'ywpi_invoice_date_format_document'
+
+
+= Version 1.9.0 - Released: Dec 27, 2018 =
+
+* New: support to electronic invoice for italian customers. You can now create an XML document including all fields required by the Italian Agenzia delle Entrate.
+* Update: plugin fw to version 3.1.6
 
 = Version 1.8.6 - Released: Dec 07, 2018 =
 

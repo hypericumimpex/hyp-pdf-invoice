@@ -120,10 +120,9 @@ if ( ! class_exists( 'YITH_YWPI_Backend' ) ) {
 						<p style="margin-bottom: 10px;">
 							<?php
 							$example_url = '<a class="thickbox" href="' . YITH_YWPI_ASSETS_IMAGES_URL . 'dropbox-howto.jpg?TB_iframe=true&width=600&height=550">';
-							echo __( sprintf( 'Authorize this plugin to access to your Dropbox space.<br />
+							echo sprintf( __('Authorize this plugin to access to your Dropbox space.<br />
 								All <b>new documents</b> will be sent to your Dropbox space as soon as they are created.<br />
-	 							Copy and paste the authorization code here, as in %sthis short guide%s.', $example_url, '</a>' ),
-	 							'yith-woocommerce-pdf-invoice' );
+	 							Copy and paste the authorization code here, as in %sthis short guide%s.','yith-woocommerce-pdf-invoice'), $example_url, '</a>' );
  							?>
  						</p>
 
@@ -314,6 +313,7 @@ if ( ! class_exists( 'YITH_YWPI_Backend' ) ) {
 		public function show_order_page_buttons( $order ) {
 			
 			$invoice_section = $this->show_invoice_buttons( $order );
+
 			$invoice_action  = apply_filters( 'yith_ywpi_show_invoice_button_order_list',
 				$invoice_section, $order );
 			
@@ -382,7 +382,7 @@ if ( ! class_exists( 'YITH_YWPI_Backend' ) ) {
 			?>
 			<div class="ywpi-document-section">
 				<span class="ywpi-section-title"><?php _e( 'Invoice status', 'yith-woocommerce-pdf-invoice' ); ?></span>
-				<?php if ( $invoice->generated() ) : ?>
+				<?php if ( $invoice->generated() ) :  ?>
 					
 					<div class="ywpi-section-row">
 						<span class="ywpi-left-label"><?php echo apply_filters('ywpi_invoice_number_label_edit_order_page',__( 'Invoice number: ', 'yith-woocommerce-pdf-invoice' ),$order,$invoice); ?></span>
@@ -631,6 +631,7 @@ if ( ! class_exists( 'YITH_YWPI_Backend' ) ) {
             </div>
             <?php
         }
+
 		
 		/**
 		 * Show metabox content on back-end order page
@@ -655,6 +656,9 @@ if ( ! class_exists( 'YITH_YWPI_Backend' ) ) {
 				$this->show_credit_note_status( $post );
 				$this->show_packing_slip_status( $post );
                 $this->show_proforma_status( $post );
+
+                do_action('ywpi_print_additional_sections',$post);
+
 				?>
 			</div>
 			<?php

@@ -93,12 +93,7 @@ $invoice_details = new YITH_Invoice_Details( $document );
 					<?php echo urldecode($invoice_details->get_variation_text ( $item_id, $_product )); ?>
                     <br>
 				<?php endif; ?>
-
-                <?php if ( ywpi_is_enabled_column_short_description ( $document ) ) : ?>
-                    <?php echo urldecode($invoice_details->get_short_description( $item, $item_id )); ?>
-                    <br>
-                <?php endif; ?>
-
+                
 				<?php if ( ywpi_is_enabled_column_sku ( $document ) ) : ?>
 					<?php echo $invoice_details->get_sku_text ( $item, $item_id ); ?>
 				<?php endif; ?>

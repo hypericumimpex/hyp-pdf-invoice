@@ -129,8 +129,7 @@ if ( ! class_exists ( 'YITH_Invoice' ) ) {
 			if ( $this->order ) {
 				$format = apply_filters('ywpi_invoice_date_format',ywpi_get_option ( 'ywpi_invoice_date_format' ));
 				$order_id = yit_get_prop( $this->order,'id' );
-				$date   = get_post_meta( $order_id, '_completed_date', true ) ? date($format,strtotime(get_post_meta( $order_id, '_completed_date', true ))) : date ( $format, strtotime ( $this->order->get_date_created() ) );
-			}
+                $date   = apply_filters('ywpi_invoice_date_format_document' , get_post_meta( $order_id, '_completed_date', true ) ? date($format,strtotime(get_post_meta( $order_id, '_completed_date', true ))) : date ( $format, strtotime ( $this->order->get_date_created() ) ) , $format, $this->order );			}
 			
 			return $date;
 		}
@@ -143,7 +142,6 @@ if ( ! class_exists ( 'YITH_Invoice' ) ) {
 		 * @since  1.0.0
 		 */
 		public function get_formatted_document_number() {
-			
 			return $this->formatted_number;
 			
 		}

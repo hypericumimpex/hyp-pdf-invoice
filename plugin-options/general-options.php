@@ -50,6 +50,14 @@ $general_options = array(
             'desc' => __('Check this option to enable credit note management.', 'yith-woocommerce-pdf-invoice'),
             'default' => 'no',
         ),
+        'electronic-invoice' => array(
+            'name' => __('Enable eletronic invoice (Italian Customers)', 'yith-woocommerce-pdf-invoice'),
+            'type' => 'checkbox',
+            'id' => 'ywpi_electronic_invoice_enable',
+            'desc' => sprintf( __('Check this option to enable electronic invoice system. You\' be able to download a XML to forward to "Agenzia delle Entrate".%3$s 
+                       %1$s Only for Italian Customers', 'yith-woocommerce-pdf-invoice'),'<b>','</b>','<br>' ),
+            'default' => 'no',
+        ),
         array(
             'type' => 'sectionend',
         ),

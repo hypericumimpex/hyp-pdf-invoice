@@ -258,7 +258,7 @@ if ( !class_exists( 'YIT_Licence' ) ) {
                 update_option( $this->_licence_option, $options );
 
                 /* === Update Plugin Licence Information === */
-                YIT_Upgrade()->force_regenerate_update_transient();
+                yith_plugin_fw_force_regenerate_plugin_update_transient();
 
                 /* === Licence Activation Template === */
                 $body[ 'template' ] = $this->show_activation_panel( $this->get_response_code_message( 200 ) );
@@ -328,7 +328,7 @@ if ( !class_exists( 'YIT_Licence' ) ) {
 		            $options[ $product[ 'product_id' ] ] = $option[ $product[ 'product_id' ] ];
 
 		            /* === Update Plugin Licence Information === */
-		            YIT_Upgrade()->force_regenerate_update_transient();
+		            yith_plugin_fw_force_regenerate_plugin_update_transient();
 
 		            update_option( $this->_licence_option, $options );
 
@@ -493,7 +493,7 @@ if ( !class_exists( 'YIT_Licence' ) ) {
 
                 /* === Update Plugin Licence Information === */
                 if ( $regenerate_transient ) {
-                    YIT_Upgrade()->force_regenerate_update_transient();
+                    yith_plugin_fw_force_regenerate_plugin_update_transient();
                 }
             }
 
@@ -531,7 +531,7 @@ if ( !class_exists( 'YIT_Licence' ) ) {
             $this->check_all();
 
             /* === Regenerate Update Plugins Transient === */
-            YIT_Upgrade()->force_regenerate_update_transient();
+            yith_plugin_fw_force_regenerate_plugin_update_transient();
 
             do_action( 'yit_licence_after_check' );
 

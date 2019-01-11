@@ -183,8 +183,14 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 		 *
 		 * @since    1.0
 		 * @author   Andrea Grillo <andrea.grillo@yithemes.com>
+		 * @return   bool
 		 */
 		public function multisite_updater_script() {
+			/* === If class YIT_Plugin_Licence doesn't exists, no YITH plugins enabled === */
+			if( ! function_exists( 'YIT_Plugin_Licence' ) ){
+				return false;
+			}
+
 			$update_url = $changelogs = $details_url = array();
 			$strings    = array(
 				'new_version' => __( 'There is a new version of %plugin_name% available.', 'yith-plugin-fw' ),
@@ -209,14 +215,17 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 				'strings'                => $strings,
 			);
 			$suffix               = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
-			yit_enqueue_script( 'yit-multisite-updater', YIT_CORE_PLUGIN_URL . '/assets/js/multisite-updater' . $suffix . '.js', array( 'jquery' ), false, true );
+
+			if( defined( 'YIT_CORE_PLUGIN_URL' ) ){
+				yit_enqueue_script( 'yit-multisite-updater', YIT_CORE_PLUGIN_URL . '/assets/js/multisite-updater' . $suffix . '.js', array( 'jquery' ), false, true );
+			}
 
 			wp_localize_script( 'yit-multisite-updater', 'plugins', $localize_script_args );
 		}
 
 		public function admin_enqueue_scripts() {
 			global $pagenow;
-			if ( 'plugins.php' === $pagenow ) {
+			if ( 'plugins.php' === $pagenow && defined( 'YIT_CORE_PLUGIN_URL' ) ) {
 				wp_enqueue_style( 'yit-upgrader', YIT_CORE_PLUGIN_URL . '/assets/css/yit-upgrader.css' );
 			}
 		}
@@ -236,6 +245,11 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 		 * @author   Andrea Grillo <andrea.grillo@yithemes.com>
 		 */
 		public function upgrader_pre_download( $reply, $package, $upgrader ) {
+			/* === If class YIT_Plugin_Licence doesn't exists, no YITH plugins enabled === */
+			if( ! function_exists( 'YIT_Plugin_Licence' ) ){
+				return $reply;
+			}
+
 			$plugin       = false;
 			$is_bulk      = $upgrader->skin instanceof Bulk_Plugin_Upgrader_Skin;
 			$is_bulk_ajax = $upgrader->skin instanceof WP_Ajax_Upgrader_Skin;
@@ -315,7 +329,7 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 			/**
 			 * Regenerate update_plugins transient
 			 */
-			$this->force_regenerate_update_transient();
+			yith_plugin_fw_force_regenerate_plugin_update_transient();
 
 			if ( is_wp_error( $download_file ) ) {
 				return new WP_Error( 'download_failed', $upgrader->strings['download_failed'], $download_file->get_error_message() );
@@ -325,7 +339,7 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 		}
 
 		/**
-		 * Retrive the temp filename
+		 * Retrieve the temp filename
 		 *
 		 * @param string $url The package url
 		 * @param string $body The post data fields
@@ -411,6 +425,7 @@ if ( ! class_exists( 'YIT_Upgrade' ) ) {
 		 * @since  1.0
 		 * @see    update_plugins transient and pre_set_site_transient_update_plugins hooks
 		 * @author Andrea Grillo <andrea.grillo@yithemes.com>
+		 * @deprecated From version 3.1.12
 		 */
 		public function force_regenerate_update_transient() {
 			delete_site_transient( 'update_plugins' );
