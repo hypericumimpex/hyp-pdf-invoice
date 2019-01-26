@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: YITH WooCommerce PDF Invoice and Shipping List\n"
 "Report-Msgid-Bugs-To: http://wordpress.org/tag/init\n"
-"POT-Creation-Date: 2019-01-09 13:00:40+00:00\n"
-"PO-Revision-Date: 2019-01-09 14:04+0100\n"
+"POT-Creation-Date: 2019-01-22 19:50:48+00:00\n"
+"PO-Revision-Date: 2019-01-22 20:52+0100\n"
 "Last-Translator: \n"
 "Language-Team: Your Inspiration Themes <plugins@yithemes.com>\n"
 "Language: it\n"
@@ -27,78 +27,99 @@ msgstr ""
 "YITH WooCommerce PDF Invoice è abilitato ma non in funzione. Devi installare "
 "WooCommerce affinché questo possa funzionare correttamente."
 
-#: lib/class.yith-checkout-addon.php:175 lib/class.yith-checkout-addon.php:257
-#: lib/class.yith-checkout-addon.php:372 lib/class.yith-checkout-addon.php:426
+#: lib/class.yith-checkout-addon.php:175 lib/class.yith-checkout-addon.php:258
+#: lib/class.yith-checkout-addon.php:373 lib/class.yith-checkout-addon.php:427
 #: lib/class.yith-woocommerce-pdf-invoice-privacy.php:114
 msgid "SSN"
 msgstr "CF"
 
-#: lib/class.yith-checkout-addon.php:194 lib/class.yith-checkout-addon.php:272
-#: lib/class.yith-checkout-addon.php:380 lib/class.yith-checkout-addon.php:433
+#: lib/class.yith-checkout-addon.php:195 lib/class.yith-checkout-addon.php:273
+#: lib/class.yith-checkout-addon.php:381 lib/class.yith-checkout-addon.php:434
 #: lib/class.yith-woocommerce-pdf-invoice-privacy.php:115
 msgid "VAT"
 msgstr "Partita IVA"
 
-#: lib/class.yith-electronic-invoice.php:133
+#: lib/class.yith-electronic-invoice.php:145
 msgid "Receiver type"
 msgstr "Tipo di destinatario"
 
-#: lib/class.yith-electronic-invoice.php:140
+#: lib/class.yith-electronic-invoice.php:152
 msgid "Private"
 msgstr "Privato"
 
-#: lib/class.yith-electronic-invoice.php:141
+#: lib/class.yith-electronic-invoice.php:153
 msgid "Public administration"
 msgstr "Pubblica amministrazione"
 
-#: lib/class.yith-electronic-invoice.php:198
+#: lib/class.yith-electronic-invoice.php:210
 msgid "XML status"
 msgstr "Stato XML"
 
-#: lib/class.yith-electronic-invoice.php:205
+#: lib/class.yith-electronic-invoice.php:217
 #: lib/class.yith-ywpi-backend.php:388
 msgid "Invoice number: "
 msgstr "Numero fattura:"
 
-#: lib/class.yith-electronic-invoice.php:212
+#: lib/class.yith-electronic-invoice.php:224
 msgid "View XML"
 msgstr "Visualizza XML"
 
-#: lib/class.yith-electronic-invoice.php:214
+#: lib/class.yith-electronic-invoice.php:226
 #: lib/class.yith-ywpi-backend.php:408 lib/class.yith-ywpi-backend.php:410
 #: lib/class.yith-ywpi-backend.php:550 lib/class.yith-ywpi-backend.php:617
 msgid "View"
 msgstr "Visualizza"
 
-#: lib/class.yith-electronic-invoice.php:217
+#: lib/class.yith-electronic-invoice.php:229
 msgid "Regenerate XML"
 msgstr "Rigenera XML"
 
-#: lib/class.yith-electronic-invoice.php:219
+#: lib/class.yith-electronic-invoice.php:231
 #: lib/class.yith-ywpi-backend.php:562 lib/class.yith-ywpi-backend.php:622
 msgctxt "Button text to regenerate a document"
 msgid "Regenerate"
 msgstr "Rigenera"
 
-#: lib/class.yith-electronic-invoice.php:223
+#: lib/class.yith-electronic-invoice.php:235
 msgid "The XML file has been created for this order"
 msgstr "È stato creato il file XML per quest'ordine"
 
-#: lib/class.yith-electronic-invoice.php:226
+#: lib/class.yith-electronic-invoice.php:238
 msgid "Create XML"
 msgstr "Crea XML"
 
-#: lib/class.yith-electronic-invoice.php:228
+#: lib/class.yith-electronic-invoice.php:240
 #: lib/class.yith-ywpi-backend.php:425 lib/class.yith-ywpi-backend.php:427
 #: lib/class.yith-ywpi-backend.php:489 lib/class.yith-ywpi-backend.php:568
 #: lib/class.yith-ywpi-backend.php:628
 msgid "Create"
 msgstr "Crea"
 
-#: lib/class.yith-electronic-invoice.php:272
-#: lib/class.yith-electronic-invoice.php:277
-msgid "Company name is set, so %s is a required field."
-msgstr "Il nome dell'azienda è impostato, quindi %s è un campo obbligatorio."
+#: lib/class.yith-electronic-invoice.php:286
+msgid ""
+"Company name is set, so fill a field between %1$sReceiver ID%2$s and "
+"%1$sReceiver PEC%2$s"
+msgstr ""
+"Il nome dell'azienda è impostato, quindi imposta almeno uno tra %1$sReceiver "
+"ID%2$s e %1$sReceiver PEC%2$s"
+
+#: lib/class.yith-electronic-invoice.php:290
+msgid "Company name is set, so %1$sVat Number%2$s field is a a required field"
+msgstr ""
+"Il nome dell'azienda è impostato, quindi il numero di partita IVA è un campo "
+"obbligatorio."
+
+#: lib/class.yith-electronic-invoice.php:295
+msgid "%1$sSSN%2$s is a required field "
+msgstr "%1$sSSN%2$s è un campo richiesto"
+
+#: lib/class.yith-electronic-invoice.php:310
+msgid "Billing Receiver ID"
+msgstr "ID del destinatario di fatturazione"
+
+#: lib/class.yith-electronic-invoice.php:314
+msgid "Billing Receiver PEC"
+msgstr "PEC del destinatario di fatturazione"
 
 #: lib/class.yith-invoice-details.php:99 lib/class.yith-invoice-details.php:105
 msgid "SKU: "
@@ -616,157 +637,259 @@ msgstr ""
 "Imposta un testo da utilizzare come suffisso per il numero della nota di "
 "credito. Lascia il campo vuoto se non dev'essere utilizzato alcun prefisso"
 
-#: plugin-options/electronic-invoice-options.php:21
+#: plugin-options/electronic-invoice-options.php:22
+#: plugin-options/general-options.php:65
+msgid "General settings"
+msgstr "Impostazioni generali"
+
+#: plugin-options/electronic-invoice-options.php:26
+msgid "Filename"
+msgstr "Nome file"
+
+#: plugin-options/electronic-invoice-options.php:29
+msgid ""
+"Set the format for the electronic invoice file name. Use [number], [prefix], "
+"[suffix], [year], [month], [day], [shop_ssn] as placeholders.\r\n"
+" Remember that filename must respect following format <b>"
+"\"IDCountryShopSSN_Invoice ID\"</b> so an example is <b>IT99999999999_00002."
+"xml</b><br>\r\n"
+" For additional informations check <a href=\"https://www.fatturapa.gov.it/"
+"export/fatturazione/it/c-11.htm\" target=\"_blank\">this page"
+msgstr ""
+"Imposta il formato da utilizzare per il nome del file legato alla "
+"fatturazione elettronica. Usa [number], [prefix], [suffix], [year], [month], "
+"[day], [shop_ssn] come segnaposto.\n"
+"Ricorda che il nome del file deve rispettare il seguente formato <b>"
+"\"IDCountryShopSSN_Invoice ID\"</b>, quindi un esemmpio possibile è "
+"<b>IT99999999999_00002.xml</b><br>\n"
+"\vPer informazioni aggiuntive ti invitiamo a controllare <a href=\"https://"
+"www.fatturapa.gov.it/export/fatturazione/it/c-11.htm\" target=\"_blank"
+"\">questa pagina."
+
+#: plugin-options/electronic-invoice-options.php:40
 msgid "Transmitter/Company details settings"
 msgstr "Impostazioni dettagli del soggetto o dell'azienda trasmittente"
 
-#: plugin-options/electronic-invoice-options.php:25
+#: plugin-options/electronic-invoice-options.php:44
 msgid "Country ID"
 msgstr "ID del paese"
 
-#: plugin-options/electronic-invoice-options.php:28
-msgid "Set the country ID to show in the XML document"
-msgstr "Imposta l'ID del paese da mostrare nel documento XML"
+#: plugin-options/electronic-invoice-options.php:47
+msgid ""
+"Set the country ID (associated to the company) to show in the XML document"
+msgstr ""
+"Imposta l'ID del paese (associato all'azienda/persona fisica) da mostrare "
+"nel documento XML"
 
-#: plugin-options/electronic-invoice-options.php:32
-msgid "Transmitter ID"
-msgstr "ID del soggetto trasmittente"
+#: plugin-options/electronic-invoice-options.php:51
+msgid "Shop SSN"
+msgstr "Codice fiscale negozio"
 
-#: plugin-options/electronic-invoice-options.php:35
-msgid "Set your transmitter ID to show in the XML document"
-msgstr "Imposta il tuo ID trasmittente da mostrare nel documento XML"
+#: plugin-options/electronic-invoice-options.php:54
+msgid ""
+"Set your transmitter ID to show in the XML document. The SSN associated to "
+"the company"
+msgstr ""
+"Imposta il tuo ID trasmittente (codice fiscale) da mostrare nel documento "
+"XML."
 
-#: plugin-options/electronic-invoice-options.php:39
+#: plugin-options/electronic-invoice-options.php:58
 msgid "Transmission format"
 msgstr "Formato trasmissione"
 
-#: plugin-options/electronic-invoice-options.php:42
+#: plugin-options/electronic-invoice-options.php:61
 msgid "Set the transmission format for the XML document"
 msgstr "Imposta il formato di trasmissione del documento XML"
 
-#: plugin-options/electronic-invoice-options.php:46
+#: plugin-options/electronic-invoice-options.php:65
 msgid "Fiscal regime"
 msgstr "Regime fiscale"
 
-#: plugin-options/electronic-invoice-options.php:49
+#: plugin-options/electronic-invoice-options.php:68
 msgid "Fiscal regime you show in the XML document"
 msgstr "Regime fiscale da mostrare nel documento XML"
 
-#: plugin-options/electronic-invoice-options.php:53
+#: plugin-options/electronic-invoice-options.php:70
+msgid "Ordinary"
+msgstr "Ordinario"
+
+#: plugin-options/electronic-invoice-options.php:71
+msgid "Minimum taxpayers (art.1, c.96-117, L. 244/07) "
+msgstr "Contribuenti minimi (art.1, c.96-117, L. 244/07) "
+
+#: plugin-options/electronic-invoice-options.php:72
+msgid ""
+"Agriculture and related activities and fishing (artt.34 e 34-bis, DPR "
+"633/72) "
+msgstr ""
+"Agricoltura e attività connesse e pesca (artt.34 e 34-bis, DPR 633/72) "
+
+#: plugin-options/electronic-invoice-options.php:73
+msgid "Sale of salts and tobaccos (art.74, c.1, DPR. 633/72) "
+msgstr "Vendita sali e tabacchi (art.74, c.1, DPR. 633/72) "
+
+#: plugin-options/electronic-invoice-options.php:74
+msgid "Trade matches (art.74, c.1, DPR 633/72) "
+msgstr "Commercio fiammiferi (art.74, c.1, DPR  633/72) "
+
+#: plugin-options/electronic-invoice-options.php:75
+msgid "Publishing ( (art.74, c.1, DPR 633/72))"
+msgstr "Editoria (art.74, c.1, DPR  633/72)"
+
+#: plugin-options/electronic-invoice-options.php:76
+msgid "Management of public telephony services (art.74, c.1, DPR 633/72) "
+msgstr "Gestione servizi telefonia pubblica (art.74, c.1, DPR 633/72) "
+
+#: plugin-options/electronic-invoice-options.php:77
+msgid ""
+"Resale of public transport and parking documents (art.74, c.1, DPR 633/72)"
+msgstr ""
+"Rivendita documenti di trasporto pubblico e di sosta (art.74, c.1, DPR  "
+"633/72) "
+
+#: plugin-options/electronic-invoice-options.php:78
+msgid ""
+"Entertainment, games and other activities as per the attached rate to DPR "
+"640/72 (art.74, c.6, DPR 633/72) "
+msgstr ""
+"Intrattenimenti, giochi e altre attività di cui alla tariffa allegata al DPR "
+"640/72 (art.74, c.6, DPR 633/72) "
+
+#: plugin-options/electronic-invoice-options.php:79
+msgid "Travel and tourism agencies (art.74-ter, DPR 633/72)"
+msgstr "Agenzie viaggi e turismo (art.74-ter, DPR 633/72) "
+
+#: plugin-options/electronic-invoice-options.php:80
+msgid "Farmhouse (art.5, c.2, L. 413/91)"
+msgstr "Agriturismo (art.5, c.2, L. 413/91) "
+
+#: plugin-options/electronic-invoice-options.php:81
+msgid "Home sales (art.25-bis, c.6, DPR 600/73) "
+msgstr "Vendite a domicilio (art.25-bis, c.6, DPR  600/73) "
+
+#: plugin-options/electronic-invoice-options.php:82
+msgid ""
+"Resale of second-hand goods, works of art, antiques or collectibles (art.36, "
+"DL 41/95)"
+msgstr ""
+"Rivendita beni usati, oggetti d’arte, d’antiquariato o da collezione "
+"(art.36, DL 41/95) "
+
+#: plugin-options/electronic-invoice-options.php:83
+msgid ""
+"Auction sales agencies of art, antiques or collectibles (art.40-bis, DL "
+"41/95)"
+msgstr ""
+"Agenzie di vendite all’asta di oggetti d’arte, antiquariato o da collezione "
+"(art.40-bis, DL 41/95) "
+
+#: plugin-options/electronic-invoice-options.php:84
+msgid "VAT for cash P.A (art.6, c.5, DPR 633/72)"
+msgstr "IVA per cassa P.A. (art.6, c.5, DPR 633/72) "
+
+#: plugin-options/electronic-invoice-options.php:85
+msgid "VAT for cash (art. 32-bis, DL 83/2012)"
+msgstr "IVA per cassa (art. 32-bis, DL 83/2012) "
+
+#: plugin-options/electronic-invoice-options.php:86
+msgid "Other"
+msgstr "Altro"
+
+#: plugin-options/electronic-invoice-options.php:87
+msgid "Flat-rate scheme"
+msgstr "Regime forfettario (art.1, c.54-89, L. 190/2014)"
+
+#: plugin-options/electronic-invoice-options.php:92
+msgid "Chargeability of VAT"
+msgstr "Esigibilità IVA"
+
+#: plugin-options/electronic-invoice-options.php:96
+msgid "VAT to instant chargeability"
+msgstr " IVA ad esigibilità immediata"
+
+#: plugin-options/electronic-invoice-options.php:97
+msgid "VAT to delayed chargeability"
+msgstr "IVA ad esigibilità differita"
+
+#: plugin-options/electronic-invoice-options.php:98
+msgid "Split payments"
+msgstr "Scissione dei pagamenti"
+
+#: plugin-options/electronic-invoice-options.php:103
+msgid "Company VAT"
+msgstr "Numero Partita IVA azienda"
+
+#: plugin-options/electronic-invoice-options.php:106
+msgid "Set VAT of your company"
+msgstr "Imposta il numero di Partita IVA della tua azienda"
+
+#: plugin-options/electronic-invoice-options.php:110
 msgid "Registered name"
 msgstr "Nome registrato"
 
-#: plugin-options/electronic-invoice-options.php:56
+#: plugin-options/electronic-invoice-options.php:113
 msgid "Set the registered name of your company"
 msgstr "Imposta il nome registrato della tua azienda"
 
-#: plugin-options/electronic-invoice-options.php:60
+#: plugin-options/electronic-invoice-options.php:117
 msgid "Address"
 msgstr "Indirizzo"
 
-#: plugin-options/electronic-invoice-options.php:63
+#: plugin-options/electronic-invoice-options.php:120
 msgid "Set the address of your company"
 msgstr "Imposta l'indirizzo della tua azienda"
 
-#: plugin-options/electronic-invoice-options.php:67
+#: plugin-options/electronic-invoice-options.php:124
 msgid "CAP"
 msgstr "CAP"
 
-#: plugin-options/electronic-invoice-options.php:70
+#: plugin-options/electronic-invoice-options.php:127
 msgid "Set the CAP (postal code) of your company"
 msgstr "Imposta il CAP della tua azienda"
 
-#: plugin-options/electronic-invoice-options.php:74
+#: plugin-options/electronic-invoice-options.php:131
 msgid "Company city"
 msgstr "Città dell'azienda"
 
-#: plugin-options/electronic-invoice-options.php:77
+#: plugin-options/electronic-invoice-options.php:134
 msgid "Set the city of your company"
 msgstr "Imposta la città della tua azienda"
 
-#: plugin-options/electronic-invoice-options.php:81
+#: plugin-options/electronic-invoice-options.php:138
 msgid "Company province"
 msgstr "Provincia"
 
-#: plugin-options/electronic-invoice-options.php:84
+#: plugin-options/electronic-invoice-options.php:141
 msgid "Set the province of your company"
 msgstr "Imposta la provincia della tua azienda"
 
-#: plugin-options/electronic-invoice-options.php:95
-msgid "Include tracking info"
-msgstr "Includi i dati di tracciamento"
-
-#: plugin-options/electronic-invoice-options.php:98
-msgid ""
-"Enable this field to include tracking fields inside the XML document. To "
-"fill these fields you'll have to custom code an integration of these data."
-msgstr ""
-"Abilita quest'opzione per includere i dati di tracciamento all'interno del "
-"documento XML. Per far sì che questi dati vengano compilati è necessario "
-"integrare questi campi con una modifica del codice."
-
-#: plugin-options/electronic-invoice-options.php:108
+#: plugin-options/electronic-invoice-options.php:166
 msgid "Checkout settings"
 msgstr "Impostazioni del checkout"
 
-#: plugin-options/electronic-invoice-options.php:112
-msgid "Show receiver ID"
-msgstr "Mostra ID del destinatario"
-
-#: plugin-options/electronic-invoice-options.php:115
-msgid ""
-"Check this option to enable the receiver ID (on Checkout and My Account page)"
-msgstr ""
-"Attiva quest'opzione per abilitare l'ID del destinatario (nelle pagine "
-"Checkout e My Account)"
-
-#: plugin-options/electronic-invoice-options.php:119
+#: plugin-options/electronic-invoice-options.php:177
 msgid "Receiver ID label"
-msgstr "ID del destinatario"
+msgstr "Etichetta campo Codice Destinatario"
 
-#: plugin-options/electronic-invoice-options.php:122
+#: plugin-options/electronic-invoice-options.php:180
 msgid "Set label for Receiver ID field"
 msgstr "Imposta l'etichetta per il campo ID Destinatario"
 
-#: plugin-options/electronic-invoice-options.php:123
+#: plugin-options/electronic-invoice-options.php:181
 msgid "Receiver ID"
 msgstr "ID del destinatario"
 
-#: plugin-options/electronic-invoice-options.php:126
-msgid "Show receiver PEC (certified email address)"
-msgstr "Mostra PEC del destinatario"
-
-#: plugin-options/electronic-invoice-options.php:129
-msgid ""
-"Check this option to enable the receiver PEC field (on Checkout and My "
-"Account page)"
-msgstr ""
-"Attiva quest'opzione per abilitare il campo PEC (nelle pagine Checkout e My "
-"Account)"
-
-#: plugin-options/electronic-invoice-options.php:133
+#: plugin-options/electronic-invoice-options.php:191
 msgid "Receiver PEC label"
-msgstr "PEC del destinatario"
+msgstr "Etichetta campo PEC del destinatario"
 
-#: plugin-options/electronic-invoice-options.php:136
+#: plugin-options/electronic-invoice-options.php:194
 msgid "Set label for Receiver PEC field"
 msgstr "Imposta l'etichetta per il campo PEC Destinatario"
 
-#: plugin-options/electronic-invoice-options.php:137
+#: plugin-options/electronic-invoice-options.php:195
 msgid "Receiver PEC"
 msgstr "PEC del destinatario"
-
-#: plugin-options/electronic-invoice-options.php:140
-msgid "Show receiver's type"
-msgstr "Mostra il tipo di destinatario"
-
-#: plugin-options/electronic-invoice-options.php:143
-msgid ""
-"Check this option to allow your customer to specify if he/she is a private "
-"entity or public administration"
-msgstr ""
-"Attiva quest'opzione per consentire ai tuoi clienti di specificare se sono "
-"privati o pubblica amministrazione"
 
 #: plugin-options/general-options.php:21
 msgid "Generating documents"
@@ -825,10 +948,6 @@ msgstr ""
 "Attiva quest'opzione per abilitare il sistema di fatturazione elettronica. "
 "Potrai scaricare un XML da inoltrare all'Agenzia delle Entrate.%3$s\n"
 "                      %1$sSolo per i clienti italiani"
-
-#: plugin-options/general-options.php:65
-msgid "General settings"
-msgstr "Impostazioni generali"
 
 #: plugin-options/general-options.php:69
 msgid "Invoice folder format"
@@ -1697,11 +1816,53 @@ msgstr "YITH"
 msgid "https://yithemes.com/"
 msgstr "https://yithemes.com/"
 
-#~ msgid "Billing Receiver ID"
-#~ msgstr "ID del destinatario di fatturazione"
+#~ msgid "Company name is set, so %s is a required field."
+#~ msgstr ""
+#~ "Il nome dell'azienda è impostato, quindi %s è un campo obbligatorio."
 
-#~ msgid "Billing Receiver PEC"
-#~ msgstr "PEC del destinatario di fatturazione"
+#~ msgid "Include tracking info"
+#~ msgstr "Includi i dati di tracciamento"
+
+#~ msgid ""
+#~ "Enable this field to include tracking fields inside the XML document. To "
+#~ "fill these fields you'll have to custom code an integration of these data."
+#~ msgstr ""
+#~ "Abilita quest'opzione per includere i dati di tracciamento all'interno "
+#~ "del documento XML. Per far sì che questi dati vengano compilati è "
+#~ "necessario integrare questi campi con una modifica del codice."
+
+#~ msgid "Show receiver ID"
+#~ msgstr "Mostra ID del destinatario"
+
+#~ msgid ""
+#~ "Check this option to enable the receiver ID (on Checkout and My Account "
+#~ "page)"
+#~ msgstr ""
+#~ "Attiva quest'opzione per abilitare l'ID del destinatario (nelle pagine "
+#~ "Checkout e My Account)"
+
+#~ msgid "Show receiver PEC (certified email address)"
+#~ msgstr "Mostra PEC del destinatario"
+
+#~ msgid ""
+#~ "Check this option to enable the receiver PEC field (on Checkout and My "
+#~ "Account page)"
+#~ msgstr ""
+#~ "Attiva quest'opzione per abilitare il campo PEC (nelle pagine Checkout e "
+#~ "My Account)"
+
+#~ msgid "Show receiver's type"
+#~ msgstr "Mostra il tipo di destinatario"
+
+#~ msgid ""
+#~ "Check this option to allow your customer to specify if he/she is a "
+#~ "private entity or public administration"
+#~ msgstr ""
+#~ "Attiva quest'opzione per consentire ai tuoi clienti di specificare se "
+#~ "sono privati o pubblica amministrazione"
+
+#~ msgid "Transmitter ID"
+#~ msgstr "ID del soggetto trasmittente"
 
 #~ msgid "Pro-forma Invoice"
 #~ msgstr "Fattura pro forma"

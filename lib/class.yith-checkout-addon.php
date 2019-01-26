@@ -188,8 +188,9 @@ if ( ! class_exists ( 'YITH_Checkout_Addon' ) ) {
 				}
 				
 				if ( $add_vat_number ) {
-					$is_required = 'yes' == get_option ( 'ask_vat_number_required', 'no' );
-					
+
+                    $is_required   = apply_filters( 'yith_ywpi_vat_number_is_required_option', 'yes' ) == get_option ( 'ask_ssn_number_required', 'no' );
+
 					$fields[ $this->vat_number_text ] = array(
 						'label'    => __ ( 'VAT', 'yith-woocommerce-pdf-invoice' ),
 						'required' => $is_required,

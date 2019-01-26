@@ -55,11 +55,15 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
              */
             add_action( 'wp_enqueue_scripts',array($this,'enqueue_scripts') );
 
-            /**
-             * Customize checkout and order detail page fields
-             */
+            /** Customize checkout and order detail page fields */
             add_filter( 'woocommerce_default_address_fields', array( $this,'customize_billing_fields' ) );
             add_filter( 'woocommerce_admin_billing_fields', array( $this,'customize_billing_fields' ) );
+
+            /* Add Electronic Invoice fields for edit profile page */
+            add_filter( 'woocommerce_customer_meta_fields', array( $this,'customize_admin_user_fields' ) );
+
+            /* Load billing fields in ajax when create a new order by backend */
+            add_filter( 'woocommerce_ajax_get_customer_details', array( $this,'load_customer_billing_details' ),10,3 );
 
             /* Syncronize numeration of invoice and xml */
             add_filter( 'yith_ywpi_current_invoice_number', array( $this,'set_invoice_number_for_xml_documents' ),10,3 );
@@ -73,8 +77,16 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
             /* Create automatically XML documents */
             add_action( 'ywpi_create_automatic_invoice', array( $this,'create_automatically_document' ) );
 
-
+            /* Validate Checkout fields */
             add_action( 'woocommerce_after_checkout_validation', array( $this,'validate_checkout_fields' ),10,2 );
+            
+
+            /* Set Vat Number and SSN as required or not */
+            add_filter( 'yith_ywpi_vat_number_is_required_option', '__return_false',20 );
+            add_filter( 'yith_ywpi_ssn_is_required_option', '__return_false',20 );
+
+
+
         }
 
 
@@ -106,7 +118,7 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
          */
         public function customize_billing_fields( $fields ){
 
-            if( YITH_Electronic_Invoice()->show_receiver_id == 'yes' || apply_filters( 'ywpi_show_receiver_id_field',false ) ){
+            if( apply_filters( 'ywpi_show_receiver_id_field',true ) ){
                 $fields['receiver_id'] =  array(
                     'label'        => YITH_Electronic_Invoice()->receiver_id_label,
                     'required'     => false,
@@ -116,7 +128,7 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
                 );
             }
 
-            if( YITH_Electronic_Invoice()->show_receiver_pec == 'yes' || apply_filters( 'ywpi_show_receiver_pec_field',false ) ){
+            if( apply_filters( 'ywpi_show_receiver_pec_field',true ) ){
                 $fields['receiver_pec'] =  array(
                     'label'        => YITH_Electronic_Invoice()->receiver_pec_label,
                     'required'     => false,
@@ -266,21 +278,154 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
          */
         public function validate_checkout_fields( $data, $errors ){
 
+
             if( $data['billing_company'] != '' ){
-                if( YITH_Electronic_Invoice()->show_receiver_id == 'yes' && $data['billing_receiver_id'] == '' ){
-                    $field_label = YITH_Electronic_Invoice()->receiver_id_label;
-                    $message = apply_filters( 'ywpi_checkout_error_billing_receiver_id', sprintf( __( 'Company name is set, so %s is a required field.', 'yith-woocommerce-pdf-invoice' ), '<strong>' . esc_html( $field_label ) . '</strong>' ),$field_label);
-                    $errors->add( 'validation', $message );
+
+                if( $data['billing_country'] == 'IT' ){
+                    if( $data['billing_receiver_id'] == '' && $data['billing_receiver_pec'] == '' ){
+                        $message = $this->receiver_mandatory_id_pec_message;
+                        $errors->add( 'validation', $message );
+                    }
+                    if( $data['billing_vat_number'] == '' ){
+                        $message = $this->receiver_mandatory_vat_message;
+                        $errors->add( 'validation', $message );
+                    }
                 }
-                if( YITH_Electronic_Invoice()->show_receiver_pec == 'yes' && $data['billing_receiver_pec'] == '' ){
-                    $field_label = YITH_Electronic_Invoice()->receiver_pec_label;
-                    $message = apply_filters( 'ywpi_checkout_error_billing_receiver_oec', sprintf( __( 'Company name is set, so %s is a required field.', 'yith-woocommerce-pdf-invoice' ), '<strong>' . esc_html( $field_label ) . '</strong>' ),$field_label);
-                    $errors->add( 'validation', $message );;
-                }
+            }elseif( $data['billing_country'] == 'IT' && $data['billing_vat_ssn'] == '' ){
+                $message = $this->receiver_mandatory_ssn_message;
+                $errors->add( 'validation', $message );
             }
 
         }
 
+
+        /**
+         * Allow editing of Receiver ID and Receiver PEC editing user profile by backend
+         * @param $meta_fields
+         * @return mixed
+         */
+        public function customize_admin_user_fields( $meta_fields ){
+
+            $meta_fields['billing']['fields']['billing_receiver_id'] = array(
+                'label'       => __( 'Billing Receiver ID', 'yith-woocommerce-pdf-invoice' ),
+                'description' => '',
+            ) ;
+            $meta_fields['billing']['fields']['billing_receiver_pec'] = array(
+                'label'       => __( 'Billing Receiver PEC', 'yith-woocommerce-pdf-invoice' ),
+                'description' => '',
+            ) ;
+            return $meta_fields;
+        }
+
+
+        /** Loading in ajax of Receiver ID and Receiver PEC on user profile when an order is created manually by backend
+         * @param $data
+         * @param $customer
+         * @param $user_id
+         * @return mixed
+         */
+        public function load_customer_billing_details( $data,$customer,$user_id ){
+
+            $data['billing']['receiver_id'] =  get_user_meta( $user_id,'billing_receiver_id',true );
+            $data['billing']['receiver_pec'] =  get_user_meta( $user_id,'billing_receiver_pec',true );
+
+            return $data;
+
+        }
+
+
+        /**
+         * Get billing receiver ID (if the country is IT, the value can be filled or set as 0000000 if customer filled
+         * the PEC Email field. For not ITA customers field is set as XXXXXXX
+         * @param $document
+         * @return string
+         */
+        public function get_billing_receiver_id( $document ){
+            /* private */
+            $billing_country = $document->order->get_billing_country();
+
+            if( $document->order->get_meta('_billing_receiver_id') == '' ){
+                $billing_receiver_id = $billing_country != 'IT' ? 'XXXXXXX' : '0000000';
+            }else{
+                $billing_receiver_id = $document->order->get_meta('_billing_receiver_id');
+            }
+
+            /* per aziende codce destinatario o pec */
+
+            return $billing_receiver_id;
+        }
+
+
+        /**
+         * Get billing VAT/SSN value
+         * @param $document
+         * @return string
+         */
+        public function get_billing_vat_ssn( $document ){
+
+            $billing_country = $document->order->get_billing_country();
+
+            if( $billing_country != 'IT' || $document->order->get_meta('_billing_vat_ssn') == '' ){
+                $billing_vat_ssn = '9999999999999999';
+            }else{
+                $billing_vat_ssn = $document->order->get_meta('_billing_vat_ssn');
+            }
+
+            return $billing_vat_ssn;
+
+        }
+
+
+        /**
+         *  Get billing vat number
+         * @param $document
+         * @return string
+         */
+        public function get_billing_vat_number( $document ){
+
+            $billing_country = $document->order->get_billing_country();
+
+            if( $billing_country != 'IT' || $document->order->get_meta('_billing_vat_number') == '' ){
+                $billing_vat_number = $billing_country .' 99999999999';
+            }else{
+                $billing_vat_number = $document->order->get_meta('_billing_vat_number');
+            }
+
+            return $billing_vat_number;
+
+        }
+
+
+        /**
+         *  Recover dinamically the payment method
+         * @param $document
+         * @return string
+         */
+        public function get_payment_method( $document ){
+
+            switch ( $document->order->payment_method ){
+
+                case 'bacs':
+                    $payment_method = 'MP05';
+                    break;
+                    
+                case 'cheque':
+                    $payment_method = 'MP02';
+                    break;
+
+                case 'cod':
+                    $payment_method = 'MP01';
+                    break;
+
+                default:
+                    $payment_method = 'MP08';
+                    break;
+
+            }
+
+            return $payment_method;
+
+        }
 
     }
 }

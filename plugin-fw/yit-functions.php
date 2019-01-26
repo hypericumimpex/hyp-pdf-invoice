@@ -1068,7 +1068,7 @@ if ( !function_exists( 'yith_plugin_fw_get_icon' ) ) {
 
 if ( !function_exists( 'yith_plugin_fw_is_true' ) ) {
     function yith_plugin_fw_is_true( $value ) {
-        return true === $value || 1 === $value || '1' === $value || 'yes' === $value;
+        return true === $value || 1 === $value || '1' === $value || 'yes' === $value || 'true' === $value;
     }
 }
 

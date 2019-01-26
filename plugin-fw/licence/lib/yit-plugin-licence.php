@@ -130,20 +130,6 @@ if ( !class_exists( 'YIT_Plugin_Licence' ) ) {
                         if ( !empty( $product[ 'Name' ] ) )
                             $product_names[] = $product[ 'Name' ];
                     }
-
-                    if ( !!$product_names ) {
-                        $start          = '<span style="display:inline-block; padding:3px 10px; margin: 0 10px 10px 0; background: #f1f1f1; border-radius: 4px;">';
-                        $end            = '</span>';
-                        $product_list   = '<div>' . $start . implode( $end . $start, $product_names ) . $end . '</div>';
-                        $activation_url = self::get_license_activation_url();
-                        ?>
-                        <div class="notice notice-error">
-                            <p><strong>Warning!</strong> You didn't set license key for the following products:
-                                <?php echo $product_list ?>
-                                which means you're missing out on updates and support. <a href='<?php echo $activation_url ?>'>Enter your license key</a>, please.</p>
-                        </div>
-                        <?php
-                    }
                 }
             }
         }

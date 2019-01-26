@@ -1,18 +1,17 @@
-<?php
-?>
-
+<?php $causale = apply_filters( 'ywpi_electronic_invoice_field_value', '', 'Causale', $document ); ?>
+<?php $riferimento_numero_linea = apply_filters( 'ywpi_electronic_invoice_field_value', 1, 'RiferimentoNumeroLinea', $document ); ?>
 <DatiGenerali>
     <DatiGeneraliDocumento>
         <TipoDocumento><?php echo apply_filters( 'ywpi_electronic_invoice_field_value','TD01','TipoDocumento',$document ) ?></TipoDocumento>
         <Divisa><?php echo apply_filters( 'ywpi_electronic_invoice_field_value',$document->order->get_currency(),'Divisa',$document ) ?></Divisa>
-        <Data><?php echo apply_filters( 'ywpi_electronic_invoice_field_value',$document->order->get_date_created() ,'Data', $document ) ?></Data>
-        <Numero><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', $document->order->get_meta('ywpi_invoice_number'), 'Numero',$document )?></Numero> <!-- numero fattura -->
-        <Causale><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', '', 'Causale', $document )?></Causale>
+        <Data><?php echo apply_filters( 'ywpi_electronic_invoice_field_value',$document->order->get_date_created()->date('Y-m-d') ,'Data', $document ) ?></Data>
+        <Numero><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', $document->formatted_number, 'Numero',$document )?></Numero> <!-- numero fattura -->
+        <?php if( $causale != '' ): ?>
+            <Causale><?php echo $causale; ?></Causale>
+        <?php endif; ?>
     </DatiGeneraliDocumento>
     <DatiOrdineAcquisto>
-        <RiferimentoNumeroLinea><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', '', 'RiferimentoNumeroLinea', $document )?></RiferimentoNumeroLinea>
-        <IdDocumento><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', $document->order->get_meta('ywpi_invoice_number'), 'IdDocumento', $document )?></IdDocumento>
-        <NumItem><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', $document->order->get_meta('ywpi_invoice_number'), 'NumItem',$document )?></NumItem>
+        <IdDocumento><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', get_post_meta( $document->order->get_id(),'ywpi_invoice_number',true ), 'IdDocumento', $document )?></IdDocumento>
         <?php if( $document->is_pa_customer() ): ?>
             <CodiceCUP><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', '', 'CodiceCUP',$document )?></CodiceCUP>
             <CodiceCIG><?php echo apply_filters( 'ywpi_electronic_invoice_field_value', '', 'CodiceCIG',$document )?></CodiceCIG>

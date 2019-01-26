@@ -1307,25 +1307,33 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
                  ( $document instanceof YITH_XML )
 			) {
 
-				$option_name = ( ! $document instanceof YITH_Credit_Note ) ? 'ywpi_invoice_filename_format' : 'ywpi_credit_note_filename_format';
+			    if( $document instanceof YITH_Credit_Note ){
+                    $option_name = 'ywpi_credit_note_filename_format';
+                }elseif( $document instanceof YITH_XML ){
+                    $option_name = 'ywpi_electronic_invoice_filename_format';
+                }elseif( $document instanceof YITH_Invoice){
+                    $option_name = 'ywpi_invoice_filename_format';
+                }
 
 				// Filter to change filename format of invoice or credit note document. Use placeholder [number] to get automatically order of invoice or credit note
 				$pattern     = apply_filters('ywpi_pattern_filename_invoice_or_credit_note', ywpi_get_option_with_placeholder( $option_name, '[number]' ), $document);
 
                 $order_number = $document->order instanceof WC_Order ? $document->order->get_order_number() : '';
-
+             
 				$pattern = str_replace(
 					array(
 						'[number]',
 						'[prefix]',
 						'[suffix]',
 						'[order_number]',
+                        '[shop_ssn]'
 					),
 					array(
 						$document->number,
 						$document->prefix,
 						$document->suffix,
                         $order_number,
+                        get_option( 'ywpi_electronic_invoice_transmitter_id' )
 					),
 					$pattern );
 			} else if ( $document instanceof YITH_Pro_Forma ) {

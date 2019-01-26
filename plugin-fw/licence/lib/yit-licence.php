@@ -87,15 +87,9 @@ if ( !class_exists( 'YIT_Licence' ) ) {
                 //show extra info and renew button in debug mode
                 $this->show_extra_info = $this->show_renew_button = true;
             } else {
-                $this->show_extra_info   = defined( 'YIT_SHOW_EXTRA_LICENCE_INFO' ) && YIT_SHOW_EXTRA_LICENCE_INFO;
+                $this->show_extra_info   = ( defined( 'YIT_SHOW_EXTRA_LICENCE_INFO' ) && YIT_SHOW_EXTRA_LICENCE_INFO ) || ( ! empty( $_GET['yith_show_extra_license_info'] ) && 'yes' == $_GET['yith_show_extra_license_info'] );
                 $this->show_renew_button = !( defined( 'YIT_HIDE_LICENCE_RENEW_BUTTON' ) && YIT_HIDE_LICENCE_RENEW_BUTTON );
             }
-
-            /* Update Licence Information */
-            //@TODO: Removed for performance
-//            add_action( 'core_upgrade_preamble', array( $this, 'check_all' ) );
-//            add_action( 'wp_maybe_auto_update',  array( $this, 'check_all' ) );
-
         }
 
         /**
@@ -743,7 +737,7 @@ if ( !class_exists( 'YIT_Licence' ) ) {
                 '107'         => __( 'License key has been banned', 'yith-plugin-fw' ),
                 '108'         => __( 'Current product is not included in your YITH Club Subscription key', 'yith-plugin-fw' ),
                 '200'         => sprintf( '<strong>%s</strong>! %s', __( 'Great', 'yith-plugin-fw' ), __( 'License successfully activated', 'yith-plugin-fw' ) ),
-                'deactivated' => sprintf( '%s <strong>%s</strong>', __( 'License key deactivated for website', 'woocommerce-software-add-on' ), isset( $instance ) ? $instance : '' )
+                'deactivated' => sprintf( '%s <strong>%s</strong>', __( 'License key deactivated for website', 'yith-plugin-fw' ), isset( $instance ) ? $instance : '' )
             );
 
             return isset( $messages[ $code ] ) ? $messages[ $code ] : false;

@@ -4,12 +4,25 @@ Contributors: yithemes
 Tags: woocommerce, orders, woocommerce order, pdf, invoice, pdf invoice, delivery note, pdf invoices, automatic invoice, download, download invoice, bill order, billing, automatic billing, order invoice, billing invoice, new order, processing order, shipping list, shipping document, delivery, packing slip, transport document,  delivery, shipping, order, shop, shop invoice, customer, sell, invoices, email invoice, packing slips
 Requires at least: 4.0
 Tested up to: 5.0.x
-Stable tag: 1.9.1
+Stable tag: 1.9.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Documentation: https://docs.yithemes.com/yith-woocommerce-pdf-invoice
 
 == Changelog ==
+
+= Version 1.9.2 - Released: Jan 24, 2019 =
+
+* New: option to set Fiscal Regime of the company (Electronic Invoice module for Italian customers)
+* New: option to set Chargeability of VAT for the company (Electronic Invoice module for Italian customers)
+* New: possibility to customize error messages showed on checkout page (Electronic Invoice module for Italian customers)
+* Update: plugin fw to version 3.1.15
+* Update: italian translation
+* Tweak: Receiver ID and PEC can be edited from user profile page on the backend (Electronic Invoice module for Italian customers)
+* Tweak: AJAX Loading of Receiver ID and Receiver PEC on user profile when an order is created manually on the backend (Electronic Invoice module for Italian customers)
+* Tweak: make mandatory fields on checkout page depending on whether the user is a company or a private customer (Electronic Invoice module for Italian customers)
+* Fix: VAT Number is recovered correctly based on the user country (Electronic Invoice module for italian customers)
+* Fix: make SSN mandatory only for private Italian customers (Electronic Invoice module for Italian customers)
 
 = Version 1.9.1 - Released: Jan 09, 2019 =
 

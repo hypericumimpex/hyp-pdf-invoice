@@ -3,7 +3,7 @@
  * Plugin Name: HYP Pdf Invoice
  * Plugin URI: https://github.com/hypericumimpex/hyp-pdf-invoice/
  * Description: <code><strong>HYP Pdf Invoice</strong></code> generați automat facturi PDF, note de credit, facturi pro-forma pentru comenzile magazinului.
- * Version: 1.9.1
+ * Version: 1.9.2
  * Author: Romeo C.
  * Author URI: https://github.com/hypericumimpex/
  * Text Domain: yith-woocommerce-pdf-invoice
