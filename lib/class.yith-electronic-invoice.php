@@ -82,8 +82,8 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
             
 
             /* Set Vat Number and SSN as required or not */
-            add_filter( 'yith_ywpi_vat_number_is_required_option', '__return_false',20 );
-            add_filter( 'yith_ywpi_ssn_is_required_option', '__return_false',20 );
+            //add_filter( 'yith_ywpi_vat_number_is_required_option', '__return_false',20 );
+            //add_filter( 'yith_ywpi_ssn_is_required_option', '__return_false',20 );
 
 
 
@@ -107,6 +107,13 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
             wp_enqueue_script( 'ywpi_checkout',YITH_YWPI_ASSETS_URL . '/js/yith-wc-pdf-invoice-checkout.js', array(
                 'jquery',
             ), YITH_YWPI_VERSION, true );
+
+            $options = array(
+              'is_ssn_mandatory'    =>  get_option ( 'ask_ssn_number_required', 'no' ),
+              'is_vat_mandatory'    =>  get_option ( 'ask_vat_number_required', 'no' ),
+            );
+
+            wp_localize_script( 'ywpi_checkout', 'ywpi_checkout', $options );
 
         }
 
@@ -278,6 +285,9 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
          */
         public function validate_checkout_fields( $data, $errors ){
 
+            $is_ssn_mandatory  = apply_filters( 'yith_ywpi_ssn_is_required_option', 'yes' ) == get_option ( 'ask_ssn_number_required', 'no' );
+            $is_vat_mandatory  = apply_filters( 'yith_ywpi_ssn_is_required_option', 'yes' ) == get_option ( 'ask_vat_number_required', 'no' );
+
 
             if( $data['billing_company'] != '' ){
 
@@ -291,7 +301,7 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
                         $errors->add( 'validation', $message );
                     }
                 }
-            }elseif( $data['billing_country'] == 'IT' && $data['billing_vat_ssn'] == '' ){
+            }elseif( $data['billing_country'] == 'IT' && $data['billing_vat_ssn'] == '' && $is_ssn_mandatory != 'yes' ){
                 $message = $this->receiver_mandatory_ssn_message;
                 $errors->add( 'validation', $message );
             }
@@ -366,7 +376,12 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
             $billing_country = $document->order->get_billing_country();
 
             if( $billing_country != 'IT' || $document->order->get_meta('_billing_vat_ssn') == '' ){
-                $billing_vat_ssn = '9999999999999999';
+                if( $document->order->get_billing_company() == '' ){
+                    $billing_vat_ssn = '9999999999999999';
+                }else{
+                    $billing_vat_ssn = '';
+                }
+
             }else{
                 $billing_vat_ssn = $document->order->get_meta('_billing_vat_ssn');
             }

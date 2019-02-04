@@ -23,9 +23,13 @@ $(document).ready(function () {
     billingReceiverVatNumber.on('input', function () {
         validateFields();
     });
-    billingReceiverVatSSN.on('input', function () {
-        validateFields();
-    });
+
+    if( ywpi_checkout.is_ssn_mandatory != 'yes' ){
+        billingReceiverVatSSN.on('input', function () {
+            validateFields();
+        });
+    }
+
 
     billingCountry.on('change', function () {
         validateFields();
@@ -60,12 +64,22 @@ var validateFields = function(){
                 setFieldAsRequired( billingReceiverID );
                 setFieldAsRequired( billingReceiverPec );
             }
-            setFieldAsRequired( billingReceiverVatNumber );
-            setFieldAsNotRequired( billingReceiverVatSSN );
+
+            if( ywpi_checkout.is_vat_mandatory != 'yes' ){
+                setFieldAsRequired( billingReceiverVatNumber );
+            }
+
+            if( ywpi_checkout.is_ssn_mandatory != 'yes' ){
+                setFieldAsNotRequired( billingReceiverVatSSN );
+            }
+
 
         }else{
 
-            setFieldAsNotRequired( billingReceiverVatNumber );
+            if( ywpi_checkout.is_vat_mandatory != 'yes' ){
+                setFieldAsNotRequired( billingReceiverVatNumber );
+            }
+
             setFieldAsNotRequired( billingReceiverID, 'no' );
             setFieldAsNotRequired( billingReceiverPec, 'no' );
         }
@@ -75,13 +89,20 @@ var validateFields = function(){
 
         setFieldAsNotRequired( billingReceiverID, 'no' );
         setFieldAsNotRequired( billingReceiverPec, 'no' );
-        setFieldAsNotRequired( billingReceiverVatNumber, 'no' );
 
-        if( billingCountry.val() == 'IT' ){
-            setFieldAsRequired( billingReceiverVatSSN );
-        }else{
-            setFieldAsNotRequired( billingReceiverVatSSN );
+        if( ywpi_checkout.is_vat_mandatory != 'yes' ){
+            setFieldAsNotRequired( billingReceiverVatNumber, 'no' );
         }
+
+
+        if( ywpi_checkout.is_ssn_mandatory != 'yes' ){
+            if( billingCountry.val() == 'IT' ){
+                setFieldAsRequired( billingReceiverVatSSN );
+            }else{
+                setFieldAsNotRequired( billingReceiverVatSSN );
+            }
+        }
+
 
     }
 

@@ -61,7 +61,7 @@ $billing_vat_ssn = YITH_Electronic_Invoice()->get_billing_vat_ssn( $document );
             <Indirizzo><?php echo $billing_data['address_1']; ?></Indirizzo>
             <CAP><?php echo $billing_data['postcode']; ?></CAP>
             <Comune><?php echo $billing_data['city']; ?></Comune>
-            <?php if( $billing_data['state'] != '' ): ?>
+            <?php if( $billing_data['country'] == 'IT' ): ?>
                 <Provincia><?php echo $billing_data['state']; ?></Provincia>
             <?php endif; ?>
             <Nazione><?php echo $billing_data['country']; ?></Nazione>

@@ -3,7 +3,7 @@
  * Plugin Name: HYP Pdf Invoice
  * Plugin URI: https://github.com/hypericumimpex/hyp-pdf-invoice/
  * Description: <code><strong>HYP Pdf Invoice</strong></code> generați automat facturi PDF, note de credit, facturi pro-forma pentru comenzile magazinului.
- * Version: 1.9.2
+ * Version: 1.9.4
  * Author: Romeo C.
  * Author URI: https://github.com/hypericumimpex/
  * Text Domain: yith-woocommerce-pdf-invoice
@@ -11,22 +11,6 @@
  * WC requires at least: 3.0.0
  * WC tested up to: 3.5.0
  **/
-
-/*  Copyright 2013-2015  Your Inspiration Themes  (email : plugins@yithemes.com)
-
-    This program is free software; you can redistribute it and/or modify
-    it under the terms of the GNU General Public License, version 2, as
-    published by the Free Software Foundation.
-
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU General Public License for more details.
-
-    You should have received a copy of the GNU General Public License
-    along with this program; if not, write to the Free Software
-    Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
@@ -75,7 +59,7 @@ defined( 'YITH_YWPI_INIT' ) || define( 'YITH_YWPI_INIT', plugin_basename( __FILE
 defined( 'YITH_YWPI_PREMIUM' ) || define( 'YITH_YWPI_PREMIUM', '1' );
 defined( 'YITH_YWPI_SLUG' ) || define( 'YITH_YWPI_SLUG', 'yith-woocommerce-pdf-invoice' );
 defined( 'YITH_YWPI_SECRET_KEY' ) || define( 'YITH_YWPI_SECRET_KEY', 'gpToFMpxJ2ZT7gRSeyG8' );
-defined( 'YITH_YWPI_VERSION' ) || define( 'YITH_YWPI_VERSION', '1.9.1' );
+defined( 'YITH_YWPI_VERSION' ) || define( 'YITH_YWPI_VERSION', '1.9.4' );
 defined( 'YITH_YWPI_FILE' ) || define( 'YITH_YWPI_FILE', __FILE__ );
 defined( 'YITH_YWPI_DIR' ) || define( 'YITH_YWPI_DIR', plugin_dir_path( __FILE__ ) );
 defined( 'YITH_YWPI_URL' ) || define( 'YITH_YWPI_URL', plugins_url( '/', __FILE__ ) );

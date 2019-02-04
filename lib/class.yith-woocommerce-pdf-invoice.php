@@ -1270,27 +1270,28 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 		 * @author Alessio Torrisi
 		 * @since  1.9.0
 		 */
-		public function create_file( $document ) {
+        public function create_file( $document ) {
 
             /*  Some document type will cause the next available number to be incremented */
             $invoice_number = get_post_meta( $document->order->get_id(),'ywpi_invoice_number',true);
 
-            if( !$invoice_number ){
+            $file_format = $document instanceof YITH_XML ? 'xml' : 'pdf';
+
+            if( !$invoice_number || $file_format == 'pdf' ){
 
                 update_post_meta( $document->order->get_id(),'ywpi_invoice_number',$document->number );
 
                 $this->increment_next_document_number( $document );
             }
 
-			$content = $this->generate_template( $document );
+            $content = $this->generate_template( $document );
 
-			$file_format = $document instanceof YITH_XML ? 'xml' : 'pdf';
 
-			$document->save_folder = $this->create_storing_folder( $document );
-			$document->save_path   = sprintf( "%s.%s", $this->get_document_filename( $document ), $file_format );
+            $document->save_folder = $this->create_storing_folder( $document );
+            $document->save_path   = sprintf( "%s.%s", $this->get_document_filename( $document ), $file_format );
 
-			return file_put_contents( $document->get_full_path(), $content );
-		}
+            return file_put_contents( $document->get_full_path(), $content );
+        }
 
 		/**
 		 * Return the filename associated to the document, based on plugin settings.

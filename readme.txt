@@ -4,12 +4,25 @@ Contributors: yithemes
 Tags: woocommerce, orders, woocommerce order, pdf, invoice, pdf invoice, delivery note, pdf invoices, automatic invoice, download, download invoice, bill order, billing, automatic billing, order invoice, billing invoice, new order, processing order, shipping list, shipping document, delivery, packing slip, transport document,  delivery, shipping, order, shop, shop invoice, customer, sell, invoices, email invoice, packing slips
 Requires at least: 4.0
 Tested up to: 5.0.x
-Stable tag: 1.9.2
+Stable tag: 1.9.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Documentation: https://docs.yithemes.com/yith-woocommerce-pdf-invoice
 
 == Changelog ==
+
+= Version 1.9.4 - Released: Feb 01, 2019 =
+
+* Update: Spanish translation
+* Fix: VAT field set as mandatory incorrectly
+* Fix: hide "Codice Fiscale" field in XML document for not italian companies
+* Fix: hide Provincia field for in XML document for not italian customers
+
+
+= Version 1.9.3 - Released: Jan 29, 2019 =
+
+* Fix: Increment of the invoice numbers
+* Fix: SSN and VAT showed as mandatory in according to the plugin options
 
 = Version 1.9.2 - Released: Jan 24, 2019 =
 
