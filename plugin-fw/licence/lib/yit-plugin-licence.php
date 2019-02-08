@@ -130,27 +130,6 @@ if ( !class_exists( 'YIT_Plugin_Licence' ) ) {
                         if ( !empty( $product[ 'Name' ] ) )
                             $product_names[] = $product[ 'Name' ];
                     }
-
-                    if ( !!$product_names ) {
-                        $start          = '<span style="display:inline-block; padding:3px 10px; margin: 0 10px 10px 0; background: #f1f1f1; border-radius: 4px;">';
-                        $end            = '</span>';
-                        $product_list   = '<div>' . $start . implode( $end . $start, $product_names ) . $end . '</div>';
-                        $activation_url = self::get_license_activation_url();
-                        ?>
-                        <div class="notice notice-error">
-                            <p>
-                                <?php printf( '<strong>%s</strong> %s:', _x( 'Warning!', "[Part of]: Warning! You didn't set license key for the following products:[Plugins List] which means you're missing out on updates and support. Enter your license key, please.", 'yith-plugin-fw' ), _x( "You didn't set license key for the following products", "[Part of]: Warning! You didn't set license key for the following products:[Plugins List] which means you're missing out on updates and support. Enter your license key, please.",'yith-plugin-fw' ) ); ?><strong></strong>
-                                <?php echo $product_list ?>
-                                <?php printf( "%s. <a href='%s'>%s</a>, %s",
-                                    _x( "which means you're missing out on updates and support", "[Part of]: Warning! You didn't set license key for the following products:[Plugins List] which means you're missing out on updates and support. Enter your license key, please.", 'yith-plugin-fw'  ),
-                                    $activation_url,
-                                    _x( 'Enter your license key', "[Part of]: Warning! You didn't set license key for the following products:[Plugins List] which means you're missing out on updates and support. Enter your license key, please.", 'yith-plugin-fw' ),
-                                    _x( 'please', "[Part of]: Warning! You didn't set license key for the following products:[Plugins List] which means you're missing out on updates and support. Enter your license key, please.", 'yith-plugin-fw' )
-                                ); ?>
-                            </p>
-                        </div>
-                        <?php
-                    }
                 }
             }
         }
