@@ -1,6 +1,7 @@
 <?php
 $billing_data = $document->order->get_data()['billing'];
 $billing_country = $document->order->get_billing_country();
+$billing_company = $document->order->get_billing_company();
 $billing_receiver_id = YITH_Electronic_Invoice()->get_billing_receiver_id( $document );
 $billing_vat_number = YITH_Electronic_Invoice()->get_billing_vat_number( $document );
 $billing_vat_ssn = YITH_Electronic_Invoice()->get_billing_vat_ssn( $document );
@@ -40,12 +41,14 @@ $billing_vat_ssn = YITH_Electronic_Invoice()->get_billing_vat_ssn( $document );
     </CedentePrestatore>
     <CessionarioCommittente>
         <DatiAnagrafici>
-            <IdFiscaleIVA>
-                <IdPaese><?php echo $billing_country ?></IdPaese>
-                <IdCodice><?php echo $billing_vat_number ?></IdCodice>
-            </IdFiscaleIVA>
+            <?php if( $billing_company != '' ): ?>
+                <IdFiscaleIVA>
+                    <IdPaese><?php echo $billing_country ?></IdPaese>
+                    <IdCodice><?php echo $billing_vat_number ?></IdCodice>
+                </IdFiscaleIVA>
+            <?php endif; ?>
             <?php if( $billing_vat_ssn != '' ): ?>
-                <CodiceFiscale><?php echo $billing_vat_ssn ?></CodiceFiscale>
+                <CodiceFiscale><?php echo strtoupper($billing_vat_ssn) ?></CodiceFiscale>
             <?php endif; ?>
             <Anagrafica>
                 <?php if( $billing_data['company'] != '' ): ?>

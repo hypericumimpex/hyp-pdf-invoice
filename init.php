@@ -3,13 +3,13 @@
  * Plugin Name: HYP Pdf Invoice
  * Plugin URI: https://github.com/hypericumimpex/hyp-pdf-invoice/
  * Description: <code><strong>HYP Pdf Invoice</strong></code> generați automat facturi PDF, note de credit, facturi pro-forma pentru comenzile magazinului.
- * Version: 1.9.4
+ * Version: 1.9.5
  * Author: Romeo C.
  * Author URI: https://github.com/hypericumimpex/
  * Text Domain: yith-woocommerce-pdf-invoice
  * Domain Path: /languages/
- * WC requires at least: 3.0.0
- * WC tested up to: 3.5.0
+ * WC requires at least: 3.3.0
+ * WC tested up to: 3.5.x
  **/
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -59,7 +59,7 @@ defined( 'YITH_YWPI_INIT' ) || define( 'YITH_YWPI_INIT', plugin_basename( __FILE
 defined( 'YITH_YWPI_PREMIUM' ) || define( 'YITH_YWPI_PREMIUM', '1' );
 defined( 'YITH_YWPI_SLUG' ) || define( 'YITH_YWPI_SLUG', 'yith-woocommerce-pdf-invoice' );
 defined( 'YITH_YWPI_SECRET_KEY' ) || define( 'YITH_YWPI_SECRET_KEY', 'gpToFMpxJ2ZT7gRSeyG8' );
-defined( 'YITH_YWPI_VERSION' ) || define( 'YITH_YWPI_VERSION', '1.9.4' );
+defined( 'YITH_YWPI_VERSION' ) || define( 'YITH_YWPI_VERSION', '1.9.5' );
 defined( 'YITH_YWPI_FILE' ) || define( 'YITH_YWPI_FILE', __FILE__ );
 defined( 'YITH_YWPI_DIR' ) || define( 'YITH_YWPI_DIR', plugin_dir_path( __FILE__ ) );
 defined( 'YITH_YWPI_URL' ) || define( 'YITH_YWPI_URL', plugins_url( '/', __FILE__ ) );

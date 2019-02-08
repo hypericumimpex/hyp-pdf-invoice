@@ -4,12 +4,26 @@ Contributors: yithemes
 Tags: woocommerce, orders, woocommerce order, pdf, invoice, pdf invoice, delivery note, pdf invoices, automatic invoice, download, download invoice, bill order, billing, automatic billing, order invoice, billing invoice, new order, processing order, shipping list, shipping document, delivery, packing slip, transport document,  delivery, shipping, order, shop, shop invoice, customer, sell, invoices, email invoice, packing slips
 Requires at least: 4.0
 Tested up to: 5.0.x
-Stable tag: 1.9.4
+Stable tag: 1.9.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Documentation: https://docs.yithemes.com/yith-woocommerce-pdf-invoice
 
 == Changelog ==
+
+= Version 1.9.5 - Released: Feb 06, 2019 =
+
+* Updated: Spanish translation
+* Tweak: admin selects province by a select (electronic invoice for Italian Customers)
+* Fix: remove localization for all strings of the module Electronic Invoice
+* Fix: show "datiriepielogo" section for each tax class	(electronic invoice for Italian Customers)
+* Fix: prevent warning if billing_receiver_pec is not set (electronic invoice for Italian Customers)
+* Fix: prevent warning if billing_receiver_vat_ssn is not set (electronic invoice for Italian Customers)
+* Fix: show 'IdFiscaleIVA' section only for companies (electronic invoice for Italian Customers)
+* Fix: show 'ScontoMaggiorazione' section in case of discount on order (electronic invoice for Italian Customers)
+* Fix: force to uppercase SSN value in XML document for electronic invoice (electronic invoice for Italian Customers)
+* Fix: Fixing the increment of the Invoice number.
+
 
 = Version 1.9.4 - Released: Feb 01, 2019 =
 

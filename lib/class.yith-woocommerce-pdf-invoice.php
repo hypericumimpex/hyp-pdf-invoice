@@ -721,8 +721,8 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 				$order_number = $document->order instanceof WC_Order ? $document->order->get_order_number() : '';
 				
 				$date = getdate( strtotime( $document->date ) );
-				
-				$replace_placeholders = str_replace(
+
+                $replace_placeholders = str_replace(
 					array(
 						'[prefix]',
 						'[suffix]',
@@ -934,7 +934,7 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 			
 			$number_option = ( $document instanceof YITH_Credit_Note ) ? 'ywpi_credit_note_next_number' : 'ywpi_invoice_number';
 
-			ywpi_update_option( $number_option, intval( $document->number ) + 1, $document );
+            ywpi_update_option( $number_option, intval( $document->number ) + 1, $document );
 		}
 		
 		
@@ -1281,7 +1281,9 @@ if ( ! class_exists( 'YITH_WooCommerce_Pdf_Invoice' ) ) {
 
                 update_post_meta( $document->order->get_id(),'ywpi_invoice_number',$document->number );
 
-                $this->increment_next_document_number( $document );
+                if (!$document->generated()) {
+                    $this->increment_next_document_number($document);
+                }
             }
 
             $content = $this->generate_template( $document );

@@ -292,7 +292,7 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
             if( $data['billing_company'] != '' ){
 
                 if( $data['billing_country'] == 'IT' ){
-                    if( $data['billing_receiver_id'] == '' && $data['billing_receiver_pec'] == '' ){
+                    if( $data['billing_receiver_id'] == '' && isset($data['billing_receiver_pec']) && $data['billing_receiver_pec'] == '' ){
                         $message = $this->receiver_mandatory_id_pec_message;
                         $errors->add( 'validation', $message );
                     }
@@ -301,7 +301,7 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
                         $errors->add( 'validation', $message );
                     }
                 }
-            }elseif( $data['billing_country'] == 'IT' && $data['billing_vat_ssn'] == '' && $is_ssn_mandatory != 'yes' ){
+            }elseif( $data['billing_country'] == 'IT' && isset($data['billing_vat_ssn']) && $data['billing_vat_ssn'] == '' && $is_ssn_mandatory != 'yes' ){
                 $message = $this->receiver_mandatory_ssn_message;
                 $errors->add( 'validation', $message );
             }
@@ -439,6 +439,20 @@ if ( ! class_exists ( 'YITH_Electronic_Invoice' ) ) {
             }
 
             return $payment_method;
+
+        }
+
+
+        /**
+         * Get discount applied for each item
+         * @param $item
+         * @return string
+         */
+        public function get_discount_increment( $item, $number_format = false ){
+
+            $discount = $item->get_subtotal() - $item->get_total();
+
+            return $number_format ? number_format( $discount, 2, '.', '') : $discount;
 
         }
 
